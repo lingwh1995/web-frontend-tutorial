@@ -30,10 +30,10 @@
       }
 
       // 被代理对象 (Target)
-      let target = { x: 100 }
+      const target = { x: 100 }
       
       // 代理对象 (Proxy)
-      let proxy = {}
+      const proxy = {}
 
       // 通过 Object.defineProperty 实现数据代理
       Object.defineProperty(proxy, 'x', {

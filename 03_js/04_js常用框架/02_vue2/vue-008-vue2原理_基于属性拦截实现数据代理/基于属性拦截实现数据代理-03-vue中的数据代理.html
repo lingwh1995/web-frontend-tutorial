@@ -59,7 +59,11 @@
        * 测试：验证 vm 属性修改 (触发 setter)
        * 逻辑：修改 vm.content 会同步更新 vm._data.content，并触发 Vue 的响应式更新界面
        */
-      vm.content = '测试数据代理set()'
+      setTimeout(() => {
+        console.log('修改代理属性：')
+        // 调用下面方式修改代理属性
+        vm.content = '测试数据代理set()'
+      }, 2000)
     </script>
   </body>
 </html>

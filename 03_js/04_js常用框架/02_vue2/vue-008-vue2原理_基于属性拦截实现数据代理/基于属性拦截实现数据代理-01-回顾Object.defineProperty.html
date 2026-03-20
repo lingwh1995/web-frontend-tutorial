@@ -26,7 +26,7 @@
        * 注意：当使用了 get/set 时，不能再设置 value 和 writable，否则会报错。
        */
 
-      let person = {
+      const person = {
         name: '张三',
         sex: '男',
       }
@@ -76,9 +76,17 @@
 
       // 验证方式二：for...in 循环遍历
       console.log('for...in 遍历过程：')
-      for (let key in person) {
+      for (const key in person) {
         console.log(key)
       }
+
+      /**
+       * 验证数据拦截功能
+       */
+      console.log('验证数据拦截功能：')
+      console.log('读取age属性：', person.age)
+      person.age = 25
+      console.log('修改age属性：', person.age) 
     </script>
   </body>
 </html>
