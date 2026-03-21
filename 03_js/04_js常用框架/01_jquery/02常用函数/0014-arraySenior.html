@@ -1,65 +1,64 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-	<script src="./jquery-3.3.1.js"></script>
-	<script>
-		/**
-		 * 三种实例化数组的方式
-		 */ 
-		 //1.隐式创建
-		var arr1 = ['A','b','C',1,2,3];
-		//2.直接实例化
-			arr2 = new Array('E','F','G');
-		//3.创建数组并指定长度
-			arr3 = new Array(3);
-		console.log(arr1);
-		console.log(arr2);
-		console.log(arr3);
-		console.log(arr3[0]);//undefined
-		arr3[5] = 5;
-		console.log(arr3);//,,,,,5
-		
-		/**
-		 * join():用指定的连接符把数组拼接起来
-		 */
-		 var names = ['张三','李四','王五','赵六','孙七'];
-		 console.log(names.join("-"));//张三-李四-王五-赵六-孙七
-		 console.log(names.join("=="));//张三==李四==王五==赵六==孙七
-		 
-		 /** 
-		  * 给数组增加一个元素,特殊的情况是:数组的下标是文本,而不是数组形式的序号
-		  * 注意:在js中，文本下标的数组元素,不计入数组长度,以文本下标形式添加到数组，实际是以属性形式添加到数组对象中的
-		  */
-		  var arr_textIndex = [1,2,3];
-		  arr_textIndex['姓名'] = '张三';
-		  console.log(arr_textIndex);
-		  console.log("数组的长度:"+arr_textIndex.length);
-		  console.log("访问文本元素:"+arr_textIndex['姓名']);
-		  
-		  /**
-		   * 多维数组,都是使用[]来放值(效果在页面展示)
-		   */
-		  var multiArr = [
-			[1,2,3],
-			['一','二','三'],
-			['one','two','three']
-		  ];
-		  for(var i=0;i<multiArr.length;i++){
-			for(var j=0;j<multiArr[i].length;j++){
-				document.write(multiArr[i][j]);
-				//console.log(multiArr[i][j]);
-			}
-			document.write('<br/>');
-		  }
-    </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="./jquery-3.3.1.js"></script>
+    <script>
+      /**
+       * 三种实例化数组的方式
+       */
+      //1.隐式创建
+      var arr1 = ['A', 'b', 'C', 1, 2, 3]
+      //2.直接实例化
+      arr2 = new Array('E', 'F', 'G')
+      //3.创建数组并指定长度
+      arr3 = new Array(3)
+      console.log(arr1)
+      console.log(arr2)
+      console.log(arr3)
+      console.log(arr3[0]) //undefined
+      arr3[5] = 5
+      console.log(arr3) //,,,,,5
 
-</head>
-<body>
-	
-</body>
+      /**
+       * join():用指定的连接符把数组拼接起来
+       */
+      var names = ['张三', '李四', '王五', '赵六', '孙七']
+      console.log(names.join('-')) //张三-李四-王五-赵六-孙七
+      console.log(names.join('==')) //张三==李四==王五==赵六==孙七
+
+      /**
+       * 给数组增加一个元素,特殊的情况是:数组的下标是文本,而不是数组形式的序号
+       * 注意:在js中，文本下标的数组元素,不计入数组长度,以文本下标形式添加到数组，实际是以属性形式添加到数组对象中的
+       */
+      var arr_textIndex = [1, 2, 3]
+      arr_textIndex['姓名'] = '张三'
+      console.log(arr_textIndex)
+      console.log('数组的长度:' + arr_textIndex.length)
+      console.log('访问文本元素:' + arr_textIndex['姓名'])
+
+      /**
+       * 多维数组,都是使用[]来放值(效果在页面展示)
+       */
+      var multiArr = [
+        [1, 2, 3],
+        ['一', '二', '三'],
+        ['one', 'two', 'three'],
+      ]
+      for (var i = 0; i < multiArr.length; i++) {
+        for (var j = 0; j < multiArr[i].length; j++) {
+          document.write(multiArr[i][j])
+          //console.log(multiArr[i][j]);
+        }
+        document.write('<br/>')
+      }
+    </script>
+  </head>
+  <body></body>
 </html>

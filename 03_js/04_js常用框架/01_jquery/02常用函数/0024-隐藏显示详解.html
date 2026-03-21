@@ -1,71 +1,71 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-	<script src="./jquery-3.3.1.js"></script>
-	<script>
-		$(function(){
-			//js控制显示隐藏:
-				//1.方式1:visibility hidden/visible/collapse/inherit
-					//隐藏:隐藏该元素后该元素依然占位置
-				$("#div2")[0].style.visibility = 'hidden';
-					//显示
-				$("#div2")[0].style.visibility = 'visible';
-				
-				//2.方式2:display none/block/inline...
-					//隐藏：隐藏该元素后该元素不占位置
-				$("#div3")[0].style.display = 'none';								
-					//显示
-				$("#div3")[0].style.display = 'inline';
-				
-				
-			//jquery控制隐藏显示
-				//隐藏：隐藏该元素后该元素不占位置
-			$("#div4").hide();							
-				//显示
-			$("#div4").show();
-			
-			
-			//display属性详解			
-		});			
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="./jquery-3.3.1.js"></script>
+    <script>
+      $(function () {
+        //js控制显示隐藏:
+        //1.方式1:visibility hidden/visible/collapse/inherit
+        //隐藏:隐藏该元素后该元素依然占位置
+        $('#div2')[0].style.visibility = 'hidden'
+        //显示
+        $('#div2')[0].style.visibility = 'visible'
+
+        //2.方式2:display none/block/inline...
+        //隐藏：隐藏该元素后该元素不占位置
+        $('#div3')[0].style.display = 'none'
+        //显示
+        $('#div3')[0].style.display = 'inline'
+
+        //jquery控制隐藏显示
+        //隐藏：隐藏该元素后该元素不占位置
+        $('#div4').hide()
+        //显示
+        $('#div4').show()
+
+        //display属性详解
+      })
     </script>
-	<style>
-		.fl {
-			float:left;
-		}
-		.wh00 {
-			width:100px;
-			height:100px;
-		}
-		.red {
-			background:red;
-		}
-		.orange {
-			background:orange;
-		}
-		.blue {
-			background:blue;
-		}
-		.yellow {
-			background:yellow;
-		}	
-	</style>
-</head>
-<body>
-	<div id="div1" class="fl wh00 red">1</div>
-	<div id="div2" class="fl wh00 orange">2</div>
-	<div id="div3" class="fl wh00 blue">3</div>
-	<div id="div4" class="fl wh00 yellow">4</div>
-	<div id="div5" class="fl wh00 red">5</div>
-	<hr/>
-	<div id="div6" class="fl wh00 red">6</div>
-	<div id="div7" class="fl wh00 orange">7</div>
-	<div id="div8" class="fl wh00 blue">8</div>
-	<div id="div9" class="fl wh00 yellow">9</div>
-	<div id="div10" class="fl wh00 red">10</div>
-</body>
+    <style>
+      .fl {
+        float: left;
+      }
+      .wh00 {
+        width: 100px;
+        height: 100px;
+      }
+      .red {
+        background: red;
+      }
+      .orange {
+        background: orange;
+      }
+      .blue {
+        background: blue;
+      }
+      .yellow {
+        background: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1" class="fl wh00 red">1</div>
+    <div id="div2" class="fl wh00 orange">2</div>
+    <div id="div3" class="fl wh00 blue">3</div>
+    <div id="div4" class="fl wh00 yellow">4</div>
+    <div id="div5" class="fl wh00 red">5</div>
+    <hr />
+    <div id="div6" class="fl wh00 red">6</div>
+    <div id="div7" class="fl wh00 orange">7</div>
+    <div id="div8" class="fl wh00 blue">8</div>
+    <div id="div9" class="fl wh00 yellow">9</div>
+    <div id="div10" class="fl wh00 red">10</div>
+  </body>
 </html>

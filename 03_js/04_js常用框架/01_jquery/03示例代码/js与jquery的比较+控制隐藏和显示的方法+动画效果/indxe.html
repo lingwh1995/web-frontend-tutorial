@@ -1,10 +1,10 @@
 <html>
-      <head>
-	         <title>JS与jQuery的比较+控制隐藏与显示的四种方法+动画效果+toggle()切换隐藏与显示</title>
-			 <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8"/>
-			 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-			 <script type="text/javascript">
-			 /*
+  <head>
+    <title>JS与jQuery的比较+控制隐藏与显示的四种方法+动画效果+toggle()切换隐藏与显示</title>
+    <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8" />
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+      /*
 			    jQuery对象和js对象不能混用，为了解决这一问题，可以将jQuery和js对象相互转换
 				理论基础：js获取的DOM对象默认是单个元素，jQuery获取的对象默认是集合/数组（即使只获取了一个对象），所以
 				           js对象和jQuery对象的相互转化实际上是单个元素和数组元素的相互转换
@@ -12,81 +12,77 @@
 				jQuery-->js：1.数组型jQuery:jQuery对象[0]-->DOM对象
 				             2.集合型jQuery:jQuery.get(0)-->DOM对象
 			 */
-			         $(document).ready(function(){
-					   // alert("Hello World");
-					  
-					  
-					 });
-					 function getById_js(){
-					    var nameTemp = document.getElementById("uname");
-						var name = nameTemp.value;
-						alert("通过js获取的value："+name);
-						alert("利用jQuery对象将js对象转换为jQuery对象："+$(nameTemp).val());
-						var $nameTemp = $("#uname");
-						var name1 = $nameTemp.val();
-						alert("通过jQuery获取的value："+name1);
-						alert("jQuer集合转换为DOM对象："+$nameTemp.get(0).value);
-						alert("jQuery数组转换为DOM对象："+$nameTemp[0].value);
-					 }
-					 
-					 //控制隐藏与显示的五种方法：默认 淡入 淡出 窗帘式 toggle()--效果等同于 默认 的效果
-					 //show()/hide()和(display,none/inline/block)的区别：
-					 //1.前者可以设置显示和隐藏的时间（单位：毫秒/或者使用参数：fast/normal/slow）和动画效果，后者只能实现换行与否
-					 $(document).ready(function(){
-					    //显示
-						$("#myshow").click(function(){
-						   //$("#A").show(3000);
-						   
-						   //$("#A").show("fast");//参数：1.fast等参数要用引号引起来 2.数字/fast/normal/slow
-						   //$("#A").fadeIn(2000);//淡出  //语法：同上一行
-						   $("#A").slideDown(2000);//窗帘效果  语法：同上一行	
-						   
-						   //$("#A").css("display","block");
-						   //$("#A").css("display","inline");
-						});
-						$("#myhide").click(function(){
-						   //$("#A").hide(3000);
-						  // $("#A").hide("fast");//参数：1.fast等参数要用引号引起来 2.数字/fast/normal/slow
-						  // $("#A").fadeOut(2000);//淡入  语法：同上一行
-                          $("#A").slideUp(2000);//窗帘效果  语法：同上一行						  
+      $(document).ready(function () {
+        // alert("Hello World");
+      })
+      function getById_js() {
+        var nameTemp = document.getElementById('uname')
+        var name = nameTemp.value
+        alert('通过js获取的value：' + name)
+        alert('利用jQuery对象将js对象转换为jQuery对象：' + $(nameTemp).val())
+        var $nameTemp = $('#uname')
+        var name1 = $nameTemp.val()
+        alert('通过jQuery获取的value：' + name1)
+        alert('jQuer集合转换为DOM对象：' + $nameTemp.get(0).value)
+        alert('jQuery数组转换为DOM对象：' + $nameTemp[0].value)
+      }
 
-						   
-						   //$("#A").css("display","none");
-						});   
-						   
-						   //toggle()：切换隐藏与显示
-						 $("#myswitch").click(function(){
-						    $("#A").toggle("slow");//注意：1.toggle()还可以设置时间 fast/slow/normal等 2.toggle()默认样式等效于shhow()和hide()
-						  });
-                         
-						//toggleClass()切换css样式
-						$("#myswitch1").click(function(){
-						  //$("#A").toggleClass(.style1 .style2); //错误语句 --> 少了双引号
-						  //$("#A").toggleClass(".style1 .style2"); //错误语句-->样式前面多了点（.）
-						  $("#A").toggleClass("style1 style2");//这里只能放一个样式，不能放多个样式
-						});
-					 });
-			 </script>
-			 <style type="text/css">
-			    .style1
-				{
-				  color:red;
-				}
-				.style2
-				{
-				  color:yellow;
-				}
-			 </style>
-      </head>
-	  
-	  <body>
-	         姓名：<input type="text" name="" value="" id="uname"/>
-			 <input type="button" name="" value="js获取value" onclick="getById_js()"/> 
-	         <br/>
-			 <div id="A">测试隐藏与显示的四种方法</div>
-			 <input type="button" name="" value="显示" id="myshow"/>
-			 <input type="button" name="" value="隐藏" id="myhide"/>
-			 <input type="button" name="" value="切换隐藏和显示" id="myswitch"/>
-			 <input type="button" name="" value="切换css样式" id="myswitch1"/>
-	  </body>
+      //控制隐藏与显示的五种方法：默认 淡入 淡出 窗帘式 toggle()--效果等同于 默认 的效果
+      //show()/hide()和(display,none/inline/block)的区别：
+      //1.前者可以设置显示和隐藏的时间（单位：毫秒/或者使用参数：fast/normal/slow）和动画效果，后者只能实现换行与否
+      $(document).ready(function () {
+        //显示
+        $('#myshow').click(function () {
+          //$("#A").show(3000);
+
+          //$("#A").show("fast");//参数：1.fast等参数要用引号引起来 2.数字/fast/normal/slow
+          //$("#A").fadeIn(2000);//淡出  //语法：同上一行
+          $('#A').slideDown(2000) //窗帘效果  语法：同上一行
+
+          //$("#A").css("display","block");
+          //$("#A").css("display","inline");
+        })
+        $('#myhide').click(function () {
+          //$("#A").hide(3000);
+          // $("#A").hide("fast");//参数：1.fast等参数要用引号引起来 2.数字/fast/normal/slow
+          // $("#A").fadeOut(2000);//淡入  语法：同上一行
+          $('#A').slideUp(2000) //窗帘效果  语法：同上一行
+
+          //$("#A").css("display","none");
+        })
+
+        //toggle()：切换隐藏与显示
+        $('#myswitch').click(function () {
+          $('#A').toggle('slow') //注意：1.toggle()还可以设置时间 fast/slow/normal等 2.toggle()默认样式等效于shhow()和hide()
+        })
+
+        //toggleClass()切换css样式
+        $('#myswitch1').click(function () {
+          //$("#A").toggleClass(.style1 .style2); //错误语句 --> 少了双引号
+          //$("#A").toggleClass(".style1 .style2"); //错误语句-->样式前面多了点（.）
+          $('#A').toggleClass('style1 style2') //这里只能放一个样式，不能放多个样式
+        })
+      })
+    </script>
+    <style type="text/css">
+      .style1 {
+        color: red;
+      }
+      .style2 {
+        color: yellow;
+      }
+    </style>
+  </head>
+
+  <body>
+    姓名：
+    <input type="text" name="" value="" id="uname" />
+    <input type="button" name="" value="js获取value" onclick="getById_js()" />
+    <br />
+    <div id="A">测试隐藏与显示的四种方法</div>
+    <input type="button" name="" value="显示" id="myshow" />
+    <input type="button" name="" value="隐藏" id="myhide" />
+    <input type="button" name="" value="切换隐藏和显示" id="myswitch" />
+    <input type="button" name="" value="切换css样式" id="myswitch1" />
+  </body>
 </html>

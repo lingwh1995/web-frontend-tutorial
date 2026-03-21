@@ -1,41 +1,41 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-	<script src="./jquery-3.3.1.js"></script>
-	<script>
-		//不把函数挂载在window对象上
-		(function(){
-			var a = 10;
-			function fun1(){
-				alert(a);
-			}
-		})();
-		//打印a
-		//alert(a);
-		//调用函数
-		//fun1();
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="./jquery-3.3.1.js"></script>
+    <script>
+      //不把函数挂载在window对象上
+      ;(function () {
+        var a = 10
+        function fun1() {
+          alert(a)
+        }
+      })()
+      //打印a
+      //alert(a);
+      //调用函数
+      //fun1();
 
-		//把函数挂载在window对象上
-		(function(){
-			var b = 100;
-			function fun2(){
-				alert(b);
-			}
-			window.b = b;
-			window.fun2 = fun2;
-		})();
-		//打印a
-		alert(b);
-		//调用函数
-		fun2();
-	</script>
-</head>
-<body>
-
-</body>
+      //把函数挂载在window对象上
+      ;(function () {
+        var b = 100
+        function fun2() {
+          alert(b)
+        }
+        window.b = b
+        window.fun2 = fun2
+      })()
+      //打印a
+      alert(b)
+      //调用函数
+      fun2()
+    </script>
+  </head>
+  <body></body>
 </html>

@@ -17,14 +17,14 @@
 
       // 示例 1：二维数组转对象
       let result = Object.fromEntries([
-          ['name','尚硅谷'],
-          ['xueke', 'Java,大数据,前端,云计算']
+        ['name', '尚硅谷'],
+        ['xueke', 'Java,大数据,前端,云计算'],
       ])
       console.log(result) // { name: "尚硅谷", xueke: "..." }
 
       // 示例 2：Map 转对象
       const m = new Map()
-      m.set('name','ATGUIGU')
+      m.set('name', 'ATGUIGU')
       result = Object.fromEntries(m)
       console.log(result) // { name: "ATGUIGU" }
 

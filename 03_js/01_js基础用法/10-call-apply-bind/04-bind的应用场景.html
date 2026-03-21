@@ -1,69 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>bind 的应用场景详解</title>
-  <script>
-    /**
-     * bind 函数的核心应用场景
-     * 
-     * 1. 改变函数或方法中 this 指向。
-     * 2. 实现参数预置效果（Partial Application）。
-     * 3. 实现函数柯里化（Currying）。
-     * 4. 在回调函数中绑定正确的 this 上下文。
-     */
-
-    function add(a, b) {
-      console.log(this)
-      return a + b
-    }
-    const obj = { name: 'obj' }
-
-    // --- 场景 1: 改变函数或方法中 this 的指向 ---
-    // 立即绑定并执行，确保 add 内部的 this 指向 obj
-    console.log(add.bind(obj, 10, 5)())
-
-
-    // --- 场景 2: 实现参数预置效果 ---
-    // 预先固定第一个参数 a 为 5，生成一个只需要传一个参数的新函数
-    const addFive = add.bind(null, 5)
-    console.log(addFive(10)) // 结果为 15 (5 + 10)
-
-
-    // --- 场景 3: 实现函数柯里化 ---
-    // 定义：将多个参数的函数转换为系列单参数函数的技术
-    function multiply(x, y) {
-      return x * y
-    }
-    // 通过 bind 预设 x 为 2，派生出专用的“翻倍函数”
-    const double = multiply.bind(null, 2);
-    console.log(double(5)) // 结果为 10
-
-
-    window.onload = () => {
-      // --- 场景 4: 更改/锁定回调函数中的 this ---
-      // 在许多情况下，回调中的 this 会失去原有上下文（如事件处理函数中）。
-      // bind 可以确保回调函数内部始终保持预期的上下文。
-      
-      const person = {
-        name: 'Alice',
-        greet() {
-          console.log(`Hello, my name is ${this.name}`)
-        }
-      }
-      const button = document.querySelector('button')
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bind 的应用场景详解</title>
+    <script>
       /**
-       * 重点备注：
-       * 如果不使用 bind，greet 中的 this 在点击触发时会指向 <button> 元素，
-       * 导致 this.name 为 undefined。通过 bind(person)，我们强制锁定 this 指向 Alice。
+       * bind 函数的核心应用场景
+       *
+       * 1. 改变函数或方法中 this 指向。
+       * 2. 实现参数预置效果（Partial Application）。
+       * 3. 实现函数柯里化（Currying）。
+       * 4. 在回调函数中绑定正确的 this 上下文。
        */
-      button.addEventListener('click', person.greet.bind(person));
-    }
-  </script>
-</head>
-<body>
-  <button>点击测试使用 bind 更改回调函数中绑定的 this</button>
-</body>
+
+      function add(a, b) {
+        console.log(this)
+        return a + b
+      }
+      const obj = { name: 'obj' }
+
+      // --- 场景 1: 改变函数或方法中 this 的指向 ---
+      // 立即绑定并执行，确保 add 内部的 this 指向 obj
+      console.log(add.bind(obj, 10, 5)())
+
+      // --- 场景 2: 实现参数预置效果 ---
+      // 预先固定第一个参数 a 为 5，生成一个只需要传一个参数的新函数
+      const addFive = add.bind(null, 5)
+      console.log(addFive(10)) // 结果为 15 (5 + 10)
+
+      // --- 场景 3: 实现函数柯里化 ---
+      // 定义：将多个参数的函数转换为系列单参数函数的技术
+      function multiply(x, y) {
+        return x * y
+      }
+      // 通过 bind 预设 x 为 2，派生出专用的“翻倍函数”
+      const double = multiply.bind(null, 2)
+      console.log(double(5)) // 结果为 10
+
+      window.onload = () => {
+        // --- 场景 4: 更改/锁定回调函数中的 this ---
+        // 在许多情况下，回调中的 this 会失去原有上下文（如事件处理函数中）。
+        // bind 可以确保回调函数内部始终保持预期的上下文。
+
+        const person = {
+          name: 'Alice',
+          greet() {
+            console.log(`Hello, my name is ${this.name}`)
+          },
+        }
+        const button = document.querySelector('button')
+
+        /**
+         * 重点备注：
+         * 如果不使用 bind，greet 中的 this 在点击触发时会指向 <button> 元素，
+         * 导致 this.name 为 undefined。通过 bind(person)，我们强制锁定 this 指向 Alice。
+         */
+        button.addEventListener('click', person.greet.bind(person))
+      }
+    </script>
+  </head>
+  <body>
+    <button>点击测试使用 bind 更改回调函数中绑定的 this</button>
+  </body>
 </html>

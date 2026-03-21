@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue中的事件绑定-03-基于vue传递event对象+阻止浏览器默认事件+阻止浏览器冒泡事件</title>
+    <!-- 引入vue -->
+    <script type="text/javascript" src="../vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>事件处理-基于Vue在方法中传递event参数-阻止浏览器默认事件</h1>
+      <a href="https://www.baidu.com" @click="handleTestVuePreventDefault('阻止浏览器默认事件', $event)">
+        基于Vue在方法中传递event参数-阻止浏览器默认事件-点击显示提示信息
+      </a>
+      <br />
+
+      <h1>事件处理-基于Vue在方法中传递event参数-阻止浏览器冒泡事件</h1>
+      <div
+        style="height: 30px; background-color: skyblue"
+        @click="handleTestVueStopPropagation('阻止浏览器冒泡事件', $event)"
+      >
+        <button @click="handleTestVueStopPropagation('阻止浏览器冒泡事件', $event)">
+          基于Vue在方法中传递event参数-阻止浏览器冒泡事件-点击显示提示信息
+        </button>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      // 设置为 false 以阻止 vue 在启动时生成生产提示。
+      Vue.config.productionTip = false
+
+      /**
+       * 基于Vue在方法中传递event参数
+       *
+       * 1.阻止浏览器的默认事件      event.preventDefault();
+       * 2.阻止浏览器事件冒泡        event.stopPropagation();
+       * 3.once      事件只触发一次
+       * 4.capture   使用事件的捕获模式
+       * 5.self      只有event.target是当前的操作元素才触发事件
+       * 6.passive   事件的默认行为立即执行，无需等待事件回调完毕
+       */
+      // 创建vue实例
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          user: {
+            id: '001',
+          },
+        },
+        methods: {
+          handleTestVuePreventDefault(msg, event) {
+            // 阻止浏览器的默认事件
+            event.preventDefault()
+            alert(msg)
+          },
+          handleTestVueStopPropagation(msg, event) {
+            // 阻止浏览器事件冒泡
+            // event.stopPropagation()
+            alert(msg)
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

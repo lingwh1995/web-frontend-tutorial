@@ -19,10 +19,7 @@
        *    - reduce(callbackFn, initialValue)
        */
       const initialValue = 0
-      const sum = nums.reduce(
-        (accumulator, currentValue) => accumulator + currentValue,
-        initialValue
-      )
+      const sum = nums.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue)
       console.log(sum) // 150
       console.log('------------02------------')
 
@@ -37,10 +34,7 @@
        */
       nums = [10, 20, 30, 40, 50]
       // 示例：展示从右向左的累加
-      const sumRight = nums.reduceRight(
-        (accumulator, currentValue) => accumulator + currentValue,
-        initialValue
-      )
+      const sumRight = nums.reduceRight((accumulator, currentValue) => accumulator + currentValue, initialValue)
       console.log(sumRight)
       console.log('------------03------------')
 

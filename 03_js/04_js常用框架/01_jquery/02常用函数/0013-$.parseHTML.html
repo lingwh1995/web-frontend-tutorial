@@ -1,68 +1,70 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-	<script src="./jquery-3.3.1.js"></script>
-	<script>
-		$(function(){
-			/*
-			 * 打印jquery版本号
-			 */
-			//alert($().jquery);
-			
-			/**
-			 * jquery定义变量方式1
-			 */ 
-			//var $log = $("#log");
-			//var str = "hello, <b>my name is</b> jQuery.";
-			//var html = $.parseHTML( str );
-			//var nodeNames = [];
-			
-			/**
-			 * jquery定义变量方式2
-			 */
-			var $log = $( "#log" ),
-				str = "hello, <b>my name is</b> jQuery.",
-				html = $.parseHTML( str ),
-				//定义数组
-				nodeNames = [];
-			 // 追加需要解析的html片段
-			$log.append( html );
-			 
-			// 获取html片段节点的名称
-			$.each( html, function( i, el ) {
-				/**
-				 * 打印元素
-				 */
-				//console.log(i+"---"+el);
-				/*
-				 * 控台打印结果
-				 */
-				//0---[object Text]
-				//002-$.parseHTML.html:38 1---[object HTMLElement]
-				//002-$.parseHTML.html:38 2---[object Text]
-				nodeNames[i] = "<li>" + el.nodeName + "</li>";
-			});
-			 
-			// Insert the node names
-			$log.append( "<h3>Node Names:</h3>" );
-			//js的join方法:把数组中的元素通过连接符拼接成字符串
-			console.log(nodeNames.join( "" ));
-			//拼接结果:		<li>#text</li><li>B</li><li>#text</li>
-			console.log(nodeNames.join( "-" ));
-			//拼接结果:		<li>#text</li>-<li>B</li>-<li>#text</li>
-			$domStr = $( "<ol></ol>" ).append( nodeNames.join( "" ) );
-			$domStr.appendTo( $log );
-		});	
-	</script>	
-</head>
-<body>
-	<div id="log">
-		<h3>Content:</h3>
-	</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="./jquery-3.3.1.js"></script>
+    <script>
+      $(function () {
+        /*
+         * 打印jquery版本号
+         */
+        //alert($().jquery);
+
+        /**
+         * jquery定义变量方式1
+         */
+        //var $log = $("#log");
+        //var str = "hello, <b>my name is</b> jQuery.";
+        //var html = $.parseHTML( str );
+        //var nodeNames = [];
+
+        /**
+         * jquery定义变量方式2
+         */
+        var $log = $('#log'),
+          str = 'hello, <b>my name is</b> jQuery.',
+          html = $.parseHTML(str),
+          //定义数组
+          nodeNames = []
+        // 追加需要解析的html片段
+        $log.append(html)
+
+        // 获取html片段节点的名称
+        $.each(html, function (i, el) {
+          /**
+           * 打印元素
+           */
+          //console.log(i+"---"+el);
+          /*
+           * 控台打印结果
+           */
+          //0---[object Text]
+          //002-$.parseHTML.html:38 1---[object HTMLElement]
+          //002-$.parseHTML.html:38 2---[object Text]
+          nodeNames[i] = '<li>' + el.nodeName + '</li>'
+        })
+
+        // Insert the node names
+        $log.append('<h3>Node Names:</h3>')
+        //js的join方法:把数组中的元素通过连接符拼接成字符串
+        console.log(nodeNames.join(''))
+        //拼接结果:		<li>#text</li><li>B</li><li>#text</li>
+        console.log(nodeNames.join('-'))
+        //拼接结果:		<li>#text</li>-<li>B</li>-<li>#text</li>
+        $domStr = $('<ol></ol>').append(nodeNames.join(''))
+        $domStr.appendTo($log)
+      })
+    </script>
+  </head>
+  <body>
+    <div id="log">
+      <h3>Content:</h3>
+    </div>
+  </body>
 </html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue中的事件绑定-04-vue事件修饰符+阻止浏览器默认事件+阻止浏览器冒泡事件</title>
+    <script src="../vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h2>1. 阻止默认事件（.prevent）</h2>
+      <a href="https://www.baidu.com" @click.prevent="handleTestPrevent('阻止默认事件......')">阻止默认跳转</a>
+
+      <h2>2. 阻止事件冒泡（.stop）</h2>
+      <div
+        style="height: 30px; background-color: skyblue; line-height: 30px; padding: 0 10px"
+        @click="handleShowTip('父元素被子元素触发......')"
+      >
+        <button @click.stop="handleTestStop('阻止事件冒泡......')">阻止事件冒泡 - 点击删除订单</button>
+      </div>
+
+      <h2>3. 只触发一次（.once）</h2>
+      <button @click.once="handleTestOnce('只触发一次......')">只触发一次 - 点击删除分类</button>
+
+      <h2>4. 修饰符连用（.prevent.stop）</h2>
+      <div
+        style="height: 30px; background-color: skyblue; line-height: 30px; padding: 0 10px"
+        @click="handleShowTip('父元素被子元素触发......')"
+      >
+        <a href="https://www.baidu.com" @click.prevent.stop="handleTestPreventStop('阻止默认+阻止冒泡......')">
+          阻止默认+阻止冒泡
+        </a>
+      </div>
+    </div>
+
+    <script>
+      Vue.config.productionTip = false
+
+      /**
+       * Vue 核心事件修饰符：
+       * 1. .prevent：阻止浏览器默认行为
+       * 2. .stop：阻止事件冒泡
+       * 3. .once：事件只触发一次
+       * 4. .capture：使用事件捕获模式
+       * 5. .self：仅当 event.target 是当前元素时触发
+       * 6. .passive：立即执行默认行为，不等待回调
+       */
+      new Vue({
+        el: '#app',
+        data() {
+          return {
+            user: { id: '001' },
+          }
+        },
+        methods: {
+          // 公共提示方法
+          handleShowTip(msg) {
+            alert(msg)
+          },
+
+          // 业务处理函数（handle 前缀规范）
+          handleTestPrevent(msg) {
+            this.handleShowTip(msg)
+          },
+
+          handleTestStop(msg) {
+            this.handleShowTip(msg)
+          },
+
+          handleTestOnce(msg) {
+            this.handleShowTip(msg)
+          },
+
+          handleTestPreventStop(msg) {
+            this.handleShowTip(msg)
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

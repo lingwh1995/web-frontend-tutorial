@@ -1,69 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <script src="./jquery-3.3.1.js"></script>
-    <script >
-        /**
-         * jquery的$.queue函数
-         */ 
-        $(function(){
-            function first(){
-                function a() {
-                    console.log('a函数执行了');
-                }
-                function b() {
-                    console.log('b函数执行了');
-                }
-                //入队列
-                $.queue(document,'q1',a);
-                //再入队列
-                $.queue(document,'q1',b);
-                //获取队列中保存的函数
-                console.log($.queue(document,'q1'));
-                //出队列,执行a()
-                $.dequeue(document,'q1');
-                //再出队列,执行b()
-                $.dequeue(document,'q1');
+    <script>
+      /**
+       * jquery的$.queue函数
+       */
+      $(function () {
+        function first() {
+          function a() {
+            console.log('a函数执行了')
+          }
+          function b() {
+            console.log('b函数执行了')
+          }
+          //入队列
+          $.queue(document, 'q1', a)
+          //再入队列
+          $.queue(document, 'q1', b)
+          //获取队列中保存的函数
+          console.log($.queue(document, 'q1'))
+          //出队列,执行a()
+          $.dequeue(document, 'q1')
+          //再出队列,执行b()
+          $.dequeue(document, 'q1')
 
-                //入队列,数组形式
-                $.queue(document,'q1',[b,a]);
-                $.dequeue(document,'q1');
-                $.dequeue(document,'q1');
-            }
-            function second(){
-                function a() {
-                    console.log('a函数执行了');
-                }
-                function b() {
-                    console.log('b函数执行了');
-                }
-                //入队列
-                $(document).queue('q1',a);
-                //再入队列
-                $(document).queue('q1',b);
-                //获取队列中保存的函数
-                console.log($(document).queue('q1'));
-                //出队列,执行a()
-                $(document).dequeue('q1');
-                //再出队列,执行b()
-                $(document).dequeue('q1');
+          //入队列,数组形式
+          $.queue(document, 'q1', [b, a])
+          $.dequeue(document, 'q1')
+          $.dequeue(document, 'q1')
+        }
+        function second() {
+          function a() {
+            console.log('a函数执行了')
+          }
+          function b() {
+            console.log('b函数执行了')
+          }
+          //入队列
+          $(document).queue('q1', a)
+          //再入队列
+          $(document).queue('q1', b)
+          //获取队列中保存的函数
+          console.log($(document).queue('q1'))
+          //出队列,执行a()
+          $(document).dequeue('q1')
+          //再出队列,执行b()
+          $(document).dequeue('q1')
 
-                //入队列,数组形式
-                $(document).queue('q1',[b,a]);
-                $(document).dequeue('q1');
-                $(document).dequeue('q1');
-            }
-            first();
-            //second();
-         
-        });
+          //入队列,数组形式
+          $(document).queue('q1', [b, a])
+          $(document).dequeue('q1')
+          $(document).dequeue('q1')
+        }
+        first()
+        //second();
+      })
     </script>
-</head>
-<body>
-
-</body>
+  </head>
+  <body></body>
 </html>

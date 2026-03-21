@@ -1,39 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <script src="./jquery-3.3.1.js"></script>
-    <script >
-        $(function(){
-            console.log($);
-            /**
-             * 注意:testThis()外面的this和testThis()内部的this不是同一个this
-             */
-            //testThis()外面的this
-            console.log(this);
+    <script>
+      $(function () {
+        console.log($)
+        /**
+         * 注意:testThis()外面的this和testThis()内部的this不是同一个this
+         */
+        //testThis()外面的this
+        console.log(this)
 
-            /**
-             * 解决方法1:让that指向this
-             */ 
-            var that = this;
-            (function testThis(){
-                console.log(that);
-                console.log(this);
-            })();
+        /**
+         * 解决方法1:让that指向this
+         */
+        var that = this
+        ;(function testThis() {
+          console.log(that)
+          console.log(this)
+        })()
 
-            /**
-             * 解决方法2:使用$.proxy()包装一层,把testThis()中的this设置为testThis()外的this
-             */ 
-            ($.proxy(function testThis(){
-                console.log(that);
-                console.log(this);
-            },this))();
-        });
+        /**
+         * 解决方法2:使用$.proxy()包装一层,把testThis()中的this设置为testThis()外的this
+         */
+        $.proxy(function testThis() {
+          console.log(that)
+          console.log(this)
+        }, this)()
+      })
     </script>
-</head>
-<body>
-</body>
+  </head>
+  <body></body>
 </html>

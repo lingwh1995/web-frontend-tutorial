@@ -1,28 +1,30 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-	<script src="./jquery-3.3.1.js"></script>
-	<script>
-		$(function(){
-			//dom >>>>jquery   $(dom对象)
-			//1.获取dom对象
-			var inputs = document.getElementsByTagName("input");
-			console.log(inputs);
-			//2.转化(通过jquery工厂)
-			var $inputs=$(inputs);
-			console.log($inputs);
-			
-			//jquery>>>>dom 
-			
-			//2.1 方式1 
-			var input1 = $('input').get(1);
-			console.log(input1.value);
-			/**
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="./jquery-3.3.1.js"></script>
+    <script>
+      $(function () {
+        //dom >>>>jquery   $(dom对象)
+        //1.获取dom对象
+        var inputs = document.getElementsByTagName('input')
+        console.log(inputs)
+        //2.转化(通过jquery工厂)
+        var $inputs = $(inputs)
+        console.log($inputs)
+
+        //jquery>>>>dom
+
+        //2.1 方式1
+        var input1 = $('input').get(1)
+        console.log(input1.value)
+        /**
 			 * get(index):jquery对象集合转原生dom对象集合
 			 * 		get(index)增强:
 			 *			1.此方法底层调用:toArray()
@@ -33,23 +35,25 @@
 							   get(-1):获取倒数第一个元素	
 			 *		
 			 */
-			var inputs = $('input').get();
-			console.log('----------------------------------');			
-			for(var i=0; i<inputs.length; i++){
-				console.log(inputs[i].value);//注意:这里区分大小写，只能使用value而不能使用VALUE
-			}
-			console.log('----------------------------------');
-			
-			//2.2 方式2
-			var input2 = $('input')[2];
-			console.log(input2.value);
-		});
-    </script>
+        var inputs = $('input').get()
+        console.log('----------------------------------')
+        for (var i = 0; i < inputs.length; i++) {
+          console.log(inputs[i].value) //注意:这里区分大小写，只能使用value而不能使用VALUE
+        }
+        console.log('----------------------------------')
 
-</head>
-<body>
-	<input  type="text"  value="1111"/><br />
-	<input  type="text"  value="2222"/><br />
-	<input  type="text"  value="3333"/><br />
-</body>
+        //2.2 方式2
+        var input2 = $('input')[2]
+        console.log(input2.value)
+      })
+    </script>
+  </head>
+  <body>
+    <input type="text" value="1111" />
+    <br />
+    <input type="text" value="2222" />
+    <br />
+    <input type="text" value="3333" />
+    <br />
+  </body>
 </html>

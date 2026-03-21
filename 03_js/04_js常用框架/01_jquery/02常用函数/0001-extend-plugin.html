@@ -1,64 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <script src="./jquery-3.3.1.js"></script>
-    <script >
-        /**
-         * 使用$.extend()为jQuery扩展工具方法
-         *    注意:1.传入多个对象,合并对象(包括给对象添加属性、方法)
-         *         2.$.extend代表扩展jQuery对象本身,$.fn.extend代表扩展jQuery获取对象之后的方法
-         *         3.匿名函数自执行是为了防止全局变量污染  
-         */  
-        
-         /**
-          * 1.扩展jQuery对象本身,此方法可以直接通过$.xxx()调用
-          * 2.匿名函数自执行是为了防止全局变量污染  
-          */  
-        (function($){
-            $.extend({
-                sayHello: function() {
-                    console.log('hello,jQuery!');
-                },
-                sum: function(a,b) {
-                    return a+b;
-                }
-            });
-        })(window.jQuery); 
-        
-         /**
-          * 1.扩展通过jQuery获取到dom之后的操作方法,此方法可以通过$('selector').xxx()进行调用
-          * 2.匿名函数自执行是为了防止全局变量污染  
-          */  
-        (function($){
-            $.fn.extend({
-                renderColor: function(color) {
-                    $(this).css('color',color);
-                }
-            });
-        })(window.jQuery);
+    <script>
+      /**
+       * 使用$.extend()为jQuery扩展工具方法
+       *    注意:1.传入多个对象,合并对象(包括给对象添加属性、方法)
+       *         2.$.extend代表扩展jQuery对象本身,$.fn.extend代表扩展jQuery获取对象之后的方法
+       *         3.匿名函数自执行是为了防止全局变量污染
+       */
 
-        /**
-         * 测试扩展的函数
-         */ 
-        $(function(){
-            //测试$.xxx();
-            $.sayHello();
-            console.log($.sum(1,2));
+      /**
+       * 1.扩展jQuery对象本身,此方法可以直接通过$.xxx()调用
+       * 2.匿名函数自执行是为了防止全局变量污染
+       */
+      ;(function ($) {
+        $.extend({
+          sayHello: function () {
+            console.log('hello,jQuery!')
+          },
+          sum: function (a, b) {
+            return a + b
+          },
+        })
+      })(window.jQuery)
 
-            //测试$().xxx();
-            $('#btn').click(function(){
-                $('#color').renderColor('red')
-            });            
-        });
+      /**
+       * 1.扩展通过jQuery获取到dom之后的操作方法,此方法可以通过$('selector').xxx()进行调用
+       * 2.匿名函数自执行是为了防止全局变量污染
+       */
+      ;(function ($) {
+        $.fn.extend({
+          renderColor: function (color) {
+            $(this).css('color', color)
+          },
+        })
+      })(window.jQuery)
 
+      /**
+       * 测试扩展的函数
+       */
+      $(function () {
+        //测试$.xxx();
+        $.sayHello()
+        console.log($.sum(1, 2))
+
+        //测试$().xxx();
+        $('#btn').click(function () {
+          $('#color').renderColor('red')
+        })
+      })
     </script>
-</head>
-<body>
-    <input type="text" value="变色龙" id="color"/>
-    <input type="button" value="测试扩展的方法" id="btn"/>
-</body>
+  </head>
+  <body>
+    <input type="text" value="变色龙" id="color" />
+    <input type="button" value="测试扩展的方法" id="btn" />
+  </body>
 </html>

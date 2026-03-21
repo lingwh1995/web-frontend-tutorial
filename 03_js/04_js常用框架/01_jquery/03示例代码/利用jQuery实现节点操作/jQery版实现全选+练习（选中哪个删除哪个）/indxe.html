@@ -1,71 +1,94 @@
 <html>
-      <head>
-	         <title>jQuery练习-删除选中的复选框</title>
-			 <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8"/>
-			 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-			 <script type="text/javascript">
-			    $(document).ready(function(){
-				   $("a").css("text-decoration","none");
-				   
-				});
-				
-				function delete1(){
-				  $("#A").remove();
-				}
-				function delete2(){
-				  $("#B").remove();
-				}
-				function delete3(){
-				  $("#C").remove();
-				}
-			 </script>
-      </head>
-	  
-	  <body>
-	        <table border="1px solod black;">
-			      <tr style="background:lightgray">
-				     <th><input type="checkbox" name="" >全选</th>
-				     <th>商品信息</th>
-				     <th>价格</th>
-				     <th>数量</th>
-				     <th>操作</th>
-				  </tr>
-				  
-				  <tr id="A">
-				     <td><input type="checkbox" name=""></td>
-					 <td>天堂伞</td>
-					 <td>32.9</td>
-					 <td>
-					    <input type="button" name="" value="-">
-					    <input type="text" name="" value="1">
-						<input type="button" name="" value="+">
-					 </td>
-					  <td><input type="button" style="background:#ffffff;border:#ffffff;font-size:15px" onclick="delete1()" value="删除"></td>
-				  </tr>
-				  
-				  <tr id="B">
-				     <td><input type="checkbox" name=""></td>
-					 <td>苹果手机</td>
-					 <td>3999</td>
-					 <td>
-					    <input type="button" name="" value="-">
-					    <input type="text" name="" value="1">
-						<input type="button" name="" value="+">
-					 </td>
-					 <td><input type="button" style="background:#ffffff;border:#ffffff;font-size:15px" onclick="delete2()" value="删除"></td>
-				  </tr>
-				  
-				  <tr id="C">
-				     <td><input type="checkbox" name=""></td>
-					 <td>三星手机</td>
-					 <td>1999</td>
-					 <td>
-					    <input type="button" name="" value="-">
-					    <input type="text" name="" value="1">
-						<input type="button" name="" value="+">
-					 </td>
-					  <td><input type="button" style="background:#ffffff;border:#ffffff;font-size:15px" onclick="delete3()" value="删除"></td>
-				  </tr>
-	        </table>
-	  </body>
+  <head>
+    <title>jQuery练习-删除选中的复选框</title>
+    <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8" />
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('a').css('text-decoration', 'none')
+      })
+
+      function delete1() {
+        $('#A').remove()
+      }
+      function delete2() {
+        $('#B').remove()
+      }
+      function delete3() {
+        $('#C').remove()
+      }
+    </script>
+  </head>
+
+  <body>
+    <table border="1px solod black;">
+      <tr style="background: lightgray">
+        <th>
+          <input type="checkbox" name="" />
+          全选
+        </th>
+        <th>商品信息</th>
+        <th>价格</th>
+        <th>数量</th>
+        <th>操作</th>
+      </tr>
+
+      <tr id="A">
+        <td><input type="checkbox" name="" /></td>
+        <td>天堂伞</td>
+        <td>32.9</td>
+        <td>
+          <input type="button" name="" value="-" />
+          <input type="text" name="" value="1" />
+          <input type="button" name="" value="+" />
+        </td>
+        <td>
+          <input
+            type="button"
+            style="background: #ffffff; border: #ffffff; font-size: 15px"
+            onclick="delete1()"
+            value="删除"
+          />
+        </td>
+      </tr>
+
+      <tr id="B">
+        <td><input type="checkbox" name="" /></td>
+        <td>苹果手机</td>
+        <td>3999</td>
+        <td>
+          <input type="button" name="" value="-" />
+          <input type="text" name="" value="1" />
+          <input type="button" name="" value="+" />
+        </td>
+        <td>
+          <input
+            type="button"
+            style="background: #ffffff; border: #ffffff; font-size: 15px"
+            onclick="delete2()"
+            value="删除"
+          />
+        </td>
+      </tr>
+
+      <tr id="C">
+        <td><input type="checkbox" name="" /></td>
+        <td>三星手机</td>
+        <td>1999</td>
+        <td>
+          <input type="button" name="" value="-" />
+          <input type="text" name="" value="1" />
+          <input type="button" name="" value="+" />
+        </td>
+        <td>
+          <input
+            type="button"
+            style="background: #ffffff; border: #ffffff; font-size: 15px"
+            onclick="delete3()"
+            value="删除"
+          />
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>

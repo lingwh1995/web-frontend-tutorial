@@ -1,74 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>扩展运算符的应用</title>
-  <script>
-    /**
-     * 1. 数组的合并
-     * 使用扩展运算符可以替代 concat 方法，语法更加简洁直观
-     */
-    const arr1 = [1, 2, 3, 4]
-    const arr2 = [4, 5, 6]
-    const arr = [...arr1, ...arr2]
-    console.log(arr)
-    console.log('------------01------------')
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>扩展运算符的应用</title>
+    <script>
+      /**
+       * 1. 数组的合并
+       * 使用扩展运算符可以替代 concat 方法，语法更加简洁直观
+       */
+      const arr1 = [1, 2, 3, 4]
+      const arr2 = [4, 5, 6]
+      const arr = [...arr1, ...arr2]
+      console.log(arr)
+      console.log('------------01------------')
 
-    /**
-     * 2. 对象的合并
-     * 后面的对象属性会覆盖前面对象同名的属性（如 name 属性）
-     */
-    const obja = {
-      name: 'zhangsan',
-      age: 18,
-    }
-    const objb = {
-      name: 'lisi',
-      gender: '男',
-    }
-    const mergeObj = { ...obja, ...objb }
-    console.log(mergeObj)
-    console.log('------------02------------')
+      /**
+       * 2. 对象的合并
+       * 后面的对象属性会覆盖前面对象同名的属性（如 name 属性）
+       */
+      const obja = {
+        name: 'zhangsan',
+        age: 18,
+      }
+      const objb = {
+        name: 'lisi',
+        gender: '男',
+      }
+      const mergeObj = { ...obja, ...objb }
+      console.log(mergeObj)
+      console.log('------------02------------')
 
-    /**
-     * 3. 数组的克隆
-     * 注意：这种克隆是“浅拷贝”，如果数组元素是引用类型，拷贝的是内存地址
-     */
-    const source = ['赵', '钱', '孙', '礼']
-    const target = [...source]
-    console.log(target)
-    console.log('------------03------------')
+      /**
+       * 3. 数组的克隆
+       * 注意：这种克隆是“浅拷贝”，如果数组元素是引用类型，拷贝的是内存地址
+       */
+      const source = ['赵', '钱', '孙', '礼']
+      const target = [...source]
+      console.log(target)
+      console.log('------------03------------')
 
-    /**
-     * 4. 将伪数组转换为真正的数组：案例一
-     * 将 DOM 返回的 NodeList 转换为真正的 Array，以便使用 map/filter 等方法
-     */
-    window.onload = () => {
-      const divs = document.querySelectorAll('div')
-      console.log(divs)
-      const divsArr = [...divs]
-      console.log(divsArr)
-    }
-    console.log('------------04------------')
+      /**
+       * 4. 将伪数组转换为真正的数组：案例一
+       * 将 DOM 返回的 NodeList 转换为真正的 Array，以便使用 map/filter 等方法
+       */
+      window.onload = () => {
+        const divs = document.querySelectorAll('div')
+        console.log(divs)
+        const divsArr = [...divs]
+        console.log(divsArr)
+      }
+      console.log('------------04------------')
 
-    /**
-     * 5. 将伪数组转换为真正的数组：案例二
-     * 处理函数内部的 arguments 对象
-     */
-    function show(a, b) {
-      console.log(arguments)
-      // 将类数组的 arguments 转换为真正的数组
-      const argsArray = [...arguments]
-      console.log(argsArray)
-    }
-    show(1, 2)
-    console.log('------------05------------')
-  </script>
-</head>
-<body>
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-</body>
+      /**
+       * 5. 将伪数组转换为真正的数组：案例二
+       * 处理函数内部的 arguments 对象
+       */
+      function show(a, b) {
+        console.log(arguments)
+        // 将类数组的 arguments 转换为真正的数组
+        const argsArray = [...arguments]
+        console.log(argsArray)
+      }
+      show(1, 2)
+      console.log('------------05------------')
+    </script>
+  </head>
+  <body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </body>
 </html>

@@ -1,41 +1,40 @@
 <html>
-      <head>
-	         <title>表单事件</title>
-			 <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8"/>
-			 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-			 <script type="text/javascript">
-			 /*小结：实现鼠标经过时文字颜色改变有两种方法：
+  <head>
+    <title>表单事件</title>
+    <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8" />
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+      /*小结：实现鼠标经过时文字颜色改变有两种方法：
 			         1.利用mouseover+mouseout
 					 2.hover
 			   虽然有两种方法都可以实现，但是hover优于第一种方法很多很多，所以编码过程要注意选择性能耗费小的
 			 */
-			 //鼠标的聚焦事件--需要点击
-			     $(document).ready(function(){
-				    $("#A").focus(function(){
-					   $("#A").css("color","yellow").css("background","pink");
-					});
-					$("#A").blur(function(){
-					   $("#A").css("color","red").css("background","none");
-					});
-					$("#B").mouseover(function(){
-					   $("#B").css("color","yellow");
-					});
-					$("#B").mouseout(function(){
-					   $("#B").css("color","blue");
-					});
-				 });
-			 //鼠标的丢失焦点事件--需要点击下一个
-			 </script>
-			 <style type="text/css">
-			     #C:hover
-				 {
-				   color:red ;
-				 }
-			 </style>
-      </head>
-	  <body>
-	  <input id="A" type="button" value="测试focus()和blur()的按钮"/>
-	       <div id="B">这是用来测试的文本1</div>
-	       <div id="C">这是用来测试的文本2</div>
-	  </body>
+      //鼠标的聚焦事件--需要点击
+      $(document).ready(function () {
+        $('#A').focus(function () {
+          $('#A').css('color', 'yellow').css('background', 'pink')
+        })
+        $('#A').blur(function () {
+          $('#A').css('color', 'red').css('background', 'none')
+        })
+        $('#B').mouseover(function () {
+          $('#B').css('color', 'yellow')
+        })
+        $('#B').mouseout(function () {
+          $('#B').css('color', 'blue')
+        })
+      })
+      //鼠标的丢失焦点事件--需要点击下一个
+    </script>
+    <style type="text/css">
+      #C:hover {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="A" type="button" value="测试focus()和blur()的按钮" />
+    <div id="B">这是用来测试的文本1</div>
+    <div id="C">这是用来测试的文本2</div>
+  </body>
 </html>

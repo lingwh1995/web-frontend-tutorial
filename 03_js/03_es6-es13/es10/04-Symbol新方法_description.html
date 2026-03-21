@@ -1,27 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Symbol新方法_description</title>
-</head>
-<body>
-  <script>
-    /**
-     * ES10 特性：Symbol.prototype.description
-     * 
-     * 1. 功能：用于读取创建 Symbol 时传入的描述字符串。
-     * 2. 对比：
-     *    - 传统方式：需调用 s.toString() 得到 "Symbol(尚硅谷)"，再进行截取。
-     *    - 新增方式：直接通过 .description 属性即可获取，更直观高效。
-     */
+  </head>
+  <body>
+    <script>
+      /**
+       * ES10 特性：Symbol.prototype.description
+       *
+       * 1. 功能：用于读取创建 Symbol 时传入的描述字符串。
+       * 2. 对比：
+       *    - 传统方式：需调用 s.toString() 得到 "Symbol(尚硅谷)"，再进行截取。
+       *    - 新增方式：直接通过 .description 属性即可获取，更直观高效。
+       */
 
-    // 创建 Symbol，并传入描述信息 '尚硅谷'
-    let s = Symbol('尚硅谷')
+      // 创建 Symbol，并传入描述信息 '尚硅谷'
+      let s = Symbol('尚硅谷')
 
-    // 读取并输出描述信息
-    console.log(s.description) // 输出：尚硅谷
-  </script>
-</body>
-
+      // 读取并输出描述信息
+      console.log(s.description) // 输出：尚硅谷
+    </script>
+  </body>
 </html>

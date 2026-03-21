@@ -1,23 +1,22 @@
 <html>
-      <head>
-	         <title>万能的attr</title>
-			 <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8"/>
-			 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-			 <script type="text/javascript">
-			    $(document).ready(function(){
-				/*jQuery的attr方法可以获取一切属性，不仅可以取值也可以赋值(注意也可以给选中的对象加一个新的属性上去如： $("input[name='a']").attr("onclick","test()"))*/
-				  var $height = $("img").attr("height");
-				  var $width = $("img").attr("width");
-				  //利用attr获取图片相对路径，并实现替换
-				  var $src = $("img").attr("src","b.png");
-				  
-				 
-				  alert($width);
-				});
-			 </script>
-      </head>
-	  
-	  <body>
-	         <img src="a.png" height="200" width="500"/>
-	  </body>
+  <head>
+    <title>万能的attr</title>
+    <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8" />
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        /*jQuery的attr方法可以获取一切属性，不仅可以取值也可以赋值(注意也可以给选中的对象加一个新的属性上去如： $("input[name='a']").attr("onclick","test()"))*/
+        var $height = $('img').attr('height')
+        var $width = $('img').attr('width')
+        //利用attr获取图片相对路径，并实现替换
+        var $src = $('img').attr('src', 'b.png')
+
+        alert($width)
+      })
+    </script>
+  </head>
+
+  <body>
+    <img src="a.png" height="200" width="500" />
+  </body>
 </html>

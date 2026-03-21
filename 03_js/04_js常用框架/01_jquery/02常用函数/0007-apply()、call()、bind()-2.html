@@ -1,29 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <script src="./jquery-3.3.1.js"></script>
-</head>
-<body>
-	<button class="layui-btn" data-executor="fn">执行fn(代码执行效果请查看控制台)</button>
-</body>
-<script>
-	$(function(){
-		var functionPool = {
-			fn:function(){
-				console.log('fn执行了...');
-			}
-		}
-		$('.layui-btn').on('click', function(){
-			//写法1:能正确执行函数,并在控制台输出数据
-			var executor = $(this).data('executor');
-			//写法2:能正确执行函数,并在控制台输出数据
-			//var executor = 'fn';
-			functionPool[executor].call(this);
-	  });
-	});
-</script>
+  </head>
+  <body>
+    <button class="layui-btn" data-executor="fn">执行fn(代码执行效果请查看控制台)</button>
+  </body>
+  <script>
+    $(function () {
+      var functionPool = {
+        fn: function () {
+          console.log('fn执行了...')
+        },
+      }
+      $('.layui-btn').on('click', function () {
+        //写法1:能正确执行函数,并在控制台输出数据
+        var executor = $(this).data('executor')
+        //写法2:能正确执行函数,并在控制台输出数据
+        //var executor = 'fn';
+        functionPool[executor].call(this)
+      })
+    })
+  </script>
 </html>

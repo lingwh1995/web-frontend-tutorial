@@ -1,84 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <script src="./jquery-3.3.1.js"></script>
-    <script >
-        $(function(){
-            /**
-             * 把第二个对象的属性和方法合并到第一个对象中去 
-             */
-            function extend1(){
-                var person_1 = {
-                    name:'zhangsan'    
-                };
-                var person_2 = {
-                    age:18,
-                    sayHello:function(){
-                        console.log('hello');
-                    }
-                };
-                //把person_2合并到person_1中
-                $.extend(person_1,person_2);
-                //调用合并到的属性
-                console.log(person_1.age);
-                //调用合并到的方法
-                person_1.sayHello();
-            }
-            //extend1();
+    <script>
+      $(function () {
+        /**
+         * 把第二个对象的属性和方法合并到第一个对象中去
+         */
+        function extend1() {
+          var person_1 = {
+            name: 'zhangsan',
+          }
+          var person_2 = {
+            age: 18,
+            sayHello: function () {
+              console.log('hello')
+            },
+          }
+          //把person_2合并到person_1中
+          $.extend(person_1, person_2)
+          //调用合并到的属性
+          console.log(person_1.age)
+          //调用合并到的方法
+          person_1.sayHello()
+        }
+        //extend1();
 
-            /**
-             * 把第二个对象的属性和方法合并到target对象中去 
-             */
-             function extend2(){
-                var person_1 = {
-                    name:'zhangsan'    
-                };
-                var person_2 = {
-                    age:18,
-                    sayHello:function(){
-                        console.log('hello,go to target!');
-                    }
-                };
-                //把person_2合并到person_1中\
-                var target = {};
-                $.extend(target,person_1,person_2);
-                //调用合并到的属性
-                console.log(target.age);
-                //调用合并到的方法
-                target.sayHello();
-            }
-            //extend2();
+        /**
+         * 把第二个对象的属性和方法合并到target对象中去
+         */
+        function extend2() {
+          var person_1 = {
+            name: 'zhangsan',
+          }
+          var person_2 = {
+            age: 18,
+            sayHello: function () {
+              console.log('hello,go to target!')
+            },
+          }
+          //把person_2合并到person_1中\
+          var target = {}
+          $.extend(target, person_1, person_2)
+          //调用合并到的属性
+          console.log(target.age)
+          //调用合并到的方法
+          target.sayHello()
+        }
+        //extend2();
 
-            /**
-             * $.extend+是否深度拷贝
-             * 深度拷贝:合并时是否包含被操作对象中嵌套的子对象
-             */
-             function extend3(){
-                var object1 = {
-                    apple: 0,
-                    banana: { weight: 52, price: 100 },
-                    cherry: 97
-                                };
-                    var object2 = {
-                    banana: { price: 200 },
-                    durian: 100
-                };
-  
-                var target = {};
-                var obj = $.extend( false, target,object1, object2 );
-                console.log("object1:",object1);
-                console.log("obj:",obj);
-                console.log("target:",target);
-             }
-            extend3();
-        });
+        /**
+         * $.extend+是否深度拷贝
+         * 深度拷贝:合并时是否包含被操作对象中嵌套的子对象
+         */
+        function extend3() {
+          var object1 = {
+            apple: 0,
+            banana: { weight: 52, price: 100 },
+            cherry: 97,
+          }
+          var object2 = {
+            banana: { price: 200 },
+            durian: 100,
+          }
+
+          var target = {}
+          var obj = $.extend(false, target, object1, object2)
+          console.log('object1:', object1)
+          console.log('obj:', obj)
+          console.log('target:', target)
+        }
+        extend3()
+      })
     </script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body></body>
 </html>

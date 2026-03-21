@@ -1,63 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>数组和对象解构</title>
-  <script>
-    /**
-     * 数组和对象的解构 v1.0
-     */
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组和对象解构</title>
+    <script>
+      /**
+       * 数组和对象的解构 v1.0
+       */
 
-    /*
-    // 对数组进行解构 (将数组解构为多个独立的变量)
-    const [first, second, third] = [1, 2, 3];
-    console.log(`first:${first}, second:${second}, third:${third}`);
+      /*
+      // 对数组进行解构 (将数组解构为多个独立的变量)
+      const [first, second, third] = [1, 2, 3];
+      console.log(`first:${first}, second:${second}, third:${third}`);
 
-    // 对对象进行解构 (从匿名对象中提取属性和方法)
-    const { id, name, sayHello } = {
-      id: '001',
-      name: 'zhangsan',
-      sayHello: () => {
-        console.log(`hello, i am zhangsan ~`);
-      }
-    };
-    console.log(`id:${id}, name:${name}`);
-    sayHello();
-    */
+      // 对对象进行解构 (从匿名对象中提取属性和方法)
+      const { id, name, sayHello } = {
+        id: '001',
+        name: 'zhangsan',
+        sayHello: () => {
+          console.log(`hello, i am zhangsan ~`);
+        }
+      };
+      console.log(`id:${id}, name:${name}`);
+      sayHello();
+      */
 
-    /**
-     * 数组和对象的解构 v2.0
-     */
+      /**
+       * 数组和对象的解构 v2.0
+       */
 
-    /**
-     * 对数组进行解构
-     */
-    const [first, second, third] = [1, 2, 3];
-    console.log(`first:${first}, second:${second}, third:${third}`);
+      /**
+       * 对数组进行解构
+       */
+      const [first, second, third] = [1, 2, 3]
+      console.log(`first:${first}, second:${second}, third:${third}`)
 
-    /**
-     * 对对象进行解构并同时赋值给一个具名对象
-     * 注意：这种写法既完成了 person 对象的赋值，也完成了内部属性的解构赋值
-     */
-    const person = { id, name, sayHello } = {
-      id: '002',
-      name: 'lisi',
-      sayHello: () => {
-        console.log(`hello, i am lisi ~`);
-      }
-    };
+      /**
+       * 对对象进行解构并同时赋值给一个具名对象
+       * 注意：这种写法既完成了 person 对象的赋值，也完成了内部属性的解构赋值
+       */
+      const person = ({ id, name, sayHello } = {
+        id: '002',
+        name: 'lisi',
+        sayHello: () => {
+          console.log(`hello, i am lisi ~`)
+        },
+      })
 
-    console.log(`id:${person.id}, name:${person.name}`);
-    person.sayHello();
+      console.log(`id:${person.id}, name:${person.name}`)
+      person.sayHello()
 
-    // 备用访问方式：使用中括号语法
-    // console.log(`id:${person['id']}, name:${person['name']}`)
-    // person['sayHello']()
-    
-  </script>
-</head>
-<body>
-  
-</body>
+      // 备用访问方式：使用中括号语法
+      // console.log(`id:${person['id']}, name:${person['name']}`)
+      // person['sayHello']()
+    </script>
+  </head>
+  <body></body>
 </html>

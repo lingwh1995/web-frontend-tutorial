@@ -1,58 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <script src="./jquery-3.3.1.js"></script>
-    <script >
-        $(function(){
-            /**
-             * 普通的写法
-             */ 
-            function primary(){
-                $('#btn').click(function(){
-                    var todoList = $('#todo-list');
-                    $('ul').append('<li>'+todoList.val()+'</li>');
-                    todoList.val('');
-                });
-            }
-            //primary();
+    <script>
+      $(function () {
+        /**
+         * 普通的写法
+         */
+        function primary() {
+          $('#btn').click(function () {
+            var todoList = $('#todo-list')
+            $('ul').append('<li>' + todoList.val() + '</li>')
+            todoList.val('')
+          })
+        }
+        //primary();
 
-            /**
-             * 高级的写法
-             */ 
-            function senior() {
-                function AddTodoList(){
-    
-                }
-                //控制台打印结果如下: {constructor: ƒ}
-                $.extend(AddTodoList.prototype, {
-                    init: function() {
-                        this.bindEvents();
-                    },
-                    bindEvents:function(){
-                        $('#btn').on('click',$.proxy(this.handBtnClick,this));
-                    },
-                    handBtnClick:function() {
-                        var todoList = $('#todo-list');
-                        $('ul').append('<li>'+todoList.val()+'</li>');
-                        todoList.val('');
-                    }
-                });
-                var addTodoList = new AddTodoList();
-                addTodoList.init();
-            }
-            senior();
-        });
+        /**
+         * 高级的写法
+         */
+        function senior() {
+          function AddTodoList() {}
+          //控制台打印结果如下: {constructor: ƒ}
+          $.extend(AddTodoList.prototype, {
+            init: function () {
+              this.bindEvents()
+            },
+            bindEvents: function () {
+              $('#btn').on('click', $.proxy(this.handBtnClick, this))
+            },
+            handBtnClick: function () {
+              var todoList = $('#todo-list')
+              $('ul').append('<li>' + todoList.val() + '</li>')
+              todoList.val('')
+            },
+          })
+          var addTodoList = new AddTodoList()
+          addTodoList.init()
+        }
+        senior()
+      })
     </script>
-</head>
-<body>
-    <input type="text" value="" id="todo-list"/>
-    <input type="button" id="btn" value="添加"/>
+  </head>
+  <body>
+    <input type="text" value="" id="todo-list" />
+    <input type="button" id="btn" value="添加" />
     <ul>
-        <li>待办事项1</li>
+      <li>待办事项1</li>
     </ul>
-</body>
+  </body>
 </html>

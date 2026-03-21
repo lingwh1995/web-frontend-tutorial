@@ -7,11 +7,11 @@ sequenceDiagram
     participant Data as 内部数据 (vm._data)
 
     Note over Dev, Data: 【第一阶段：初始化铺路 - new Vue()】
-    
+
     Dev->>VM: const vm = new Vue({ data: { content: 'hello' } })
     activate VM
     VM->>Data: 1. 存储原始数据: this._data = options.data
-    
+
     loop 遍历 _data 中的每个 key
         VM->>Define: 2. 建立代理拦截
         Note right of Define: 代码实现：<br/>Object.defineProperty(vm, key, { get, set })

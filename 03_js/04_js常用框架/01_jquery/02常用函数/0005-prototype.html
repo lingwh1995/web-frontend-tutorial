@@ -1,50 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <script src="./jquery-3.3.1.js"></script>
-    <script >
-        /**
-         * 构造函数Person
-         */ 
-        function Person(name){
-            this.name = name;
-            this.sayHello=function(){
-                console.log('hello');
-            }
+    <script>
+      /**
+       * 构造函数Person
+       */
+      function Person(name) {
+        this.name = name
+        this.sayHello = function () {
+          console.log('hello')
         }
-        //创建一个对象:zhangsan
-        var zhangsan = new Person('zhangsan');
-        console.log(zhangsan.name);
-        zhangsan.sayHello();
+      }
+      //创建一个对象:zhangsan
+      var zhangsan = new Person('zhangsan')
+      console.log(zhangsan.name)
+      zhangsan.sayHello()
 
-        //创建一个对象lisi
-        var lisi = new Person('lisi');
-        console.log(lisi.name);
-        lisi.sayHello();
+      //创建一个对象lisi
+      var lisi = new Person('lisi')
+      console.log(lisi.name)
+      lisi.sayHello()
 
-        //判断lisi.name.name是否相等,如果相等,则说明构造函数的不同实例对象之间可以共享属性
-        console.log(zhangsan.name === lisi.name);
-        //判断lisi.sayHello和zhangsan.sayHello是否相等,如果相等,则说明构造函数的不同实例对象之间可以共享方法
-        console.log(lisi.sayHello === zhangsan.sayHello);
+      //判断lisi.name.name是否相等,如果相等,则说明构造函数的不同实例对象之间可以共享属性
+      console.log(zhangsan.name === lisi.name)
+      //判断lisi.sayHello和zhangsan.sayHello是否相等,如果相等,则说明构造函数的不同实例对象之间可以共享方法
+      console.log(lisi.sayHello === zhangsan.sayHello)
 
-        console.log('---------------------------------------------------');
-        /**
-         * 通过prototype来给原型对象扩充方法,这个方法可以被不同的实例对象所共享 
-         */
-        Person.prototype.sayWorld = function() {
-            console.log('world');
-        };
-        zhangsan.sayWorld();
-        lisi.sayWorld();
-        console.log(zhangsan.sayWorld === lisi.sayWorld);
-        console.log(Person.prototype);
+      console.log('---------------------------------------------------')
+      /**
+       * 通过prototype来给原型对象扩充方法,这个方法可以被不同的实例对象所共享
+       */
+      Person.prototype.sayWorld = function () {
+        console.log('world')
+      }
+      zhangsan.sayWorld()
+      lisi.sayWorld()
+      console.log(zhangsan.sayWorld === lisi.sayWorld)
+      console.log(Person.prototype)
     </script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body></body>
 </html>

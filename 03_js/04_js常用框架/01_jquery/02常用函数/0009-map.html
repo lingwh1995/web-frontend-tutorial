@@ -1,73 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <script src="./jquery-3.3.1.js"></script>
-    <script >
+    <script>
+      /**
+       * map():用于处理数组中的每一个元素,并且返回新的数组
+       */
+      $(function () {
+        var arr = ['aa', 'bb', 'cc']
         /**
-         * map():用于处理数组中的每一个元素,并且返回新的数组
-         */ 
-        $(function() {
-            var arr = ['aa','bb','cc'];
-            /**
-             * arr.map(function(item,index){});
-             */ 
-            var newArr1 = arr.map(function(item,index){
-                console.log(item);
-                console.log(index);
-                return item + 'xxxx';
-            })
-            console.log(newArr1);
-            console.log('---------------------------');
-            /**
-             * $.map(arr,function(item,index){})
-             */ 
-            var newArr2 = $.map(arr,function(item,index){
-                console.log(item);
-                console.log(index);
-                return item + 'yyyyyy';
-            })
-            console.log(newArr2);
-            console.log('---------------------------');
-            /**
-             * 数组的解构
-             */ 
-            var [a,b,c] = ['12','23','34'];
-            console.log(a);
-            console.log(b);
-            console.log(c);
-            console.log('---------------------------');
+         * arr.map(function(item,index){});
+         */
+        var newArr1 = arr.map(function (item, index) {
+          console.log(item)
+          console.log(index)
+          return item + 'xxxx'
+        })
+        console.log(newArr1)
+        console.log('---------------------------')
+        /**
+         * $.map(arr,function(item,index){})
+         */
+        var newArr2 = $.map(arr, function (item, index) {
+          console.log(item)
+          console.log(index)
+          return item + 'yyyyyy'
+        })
+        console.log(newArr2)
+        console.log('---------------------------')
+        /**
+         * 数组的解构
+         */
+        var [a, b, c] = ['12', '23', '34']
+        console.log(a)
+        console.log(b)
+        console.log(c)
+        console.log('---------------------------')
 
-            /**
-             * 字符串的解构
-             */ 
-            var [d,e,f] = 'VUE';
-            console.log(`d:${d},e:${e},f:${f}`);
-            console.log('---------------------------');
+        /**
+         * 字符串的解构
+         */
+        var [d, e, f] = 'VUE'
+        console.log(`d:${d},e:${e},f:${f}`)
+        console.log('---------------------------')
 
-            /**
-             * 对象的解构
-             */ 
-            var {m,n} = {m:'mm',n:'NN'};
-            console.log(`m:${m},n:${n}`);
-            console.log('---------------------------');
-            
-            /**
-             * 函数参数的解构
-             */ 
-            function test([x,y]){
-                console.log(x);
-                console.log(y);
-                return x+y;
-            }
-            console.log('x+y的结果:'+test([25,26]));
-        });
+        /**
+         * 对象的解构
+         */
+        var { m, n } = { m: 'mm', n: 'NN' }
+        console.log(`m:${m},n:${n}`)
+        console.log('---------------------------')
+
+        /**
+         * 函数参数的解构
+         */
+        function test([x, y]) {
+          console.log(x)
+          console.log(y)
+          return x + y
+        }
+        console.log('x+y的结果:' + test([25, 26]))
+      })
     </script>
-</head>
-<body>
-
-</body>
+  </head>
+  <body></body>
 </html>

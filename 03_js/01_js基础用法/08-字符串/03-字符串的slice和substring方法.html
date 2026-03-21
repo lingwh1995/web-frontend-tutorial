@@ -8,34 +8,34 @@
       let str = 'abcde'
 
       /**
-       * slice() 
-       * 
+       * slice()
+       *
        * 1. 功能：
        *    - 提取字符串的一部分，并将其作为新字符串返回。
        *    - 注意：该方法【不会修改】原始字符串。
-       * 
+       *
        * 2. 语法：
        *    - slice(startIndex)
        *    - slice(startIndex, endIndex)
        */
-      console.log(str.slice(1))        // "bcde"
-      console.log(str.slice(1, 4))     // "bcd"
-      console.log(str.slice(1, -1))    // "bcd" (支持负索引)
+      console.log(str.slice(1)) // "bcde"
+      console.log(str.slice(1, 4)) // "bcd"
+      console.log(str.slice(1, -1)) // "bcd" (支持负索引)
       console.log('------------01------------')
 
       /**
-       * substring() 
-       * 
+       * substring()
+       *
        * 1. 功能：
        *    - 返回该字符串从起始索引到结束索引（不包括）的部分。
        *    - 如果未提供结束索引，则返回到字符串末尾的部分。
        *    - 注意：该方法【不会修改】原始字符串。
-       * 
+       *
        * 2. 语法：
        *    - substring(startIndex)
        *    - substring(startIndex, endIndex)
        */
-      console.log(str.substring(1))    // "bcde"
+      console.log(str.substring(1)) // "bcde"
       console.log(str.substring(1, 4)) // "bcd"
       console.log('------------02------------')
     </script>

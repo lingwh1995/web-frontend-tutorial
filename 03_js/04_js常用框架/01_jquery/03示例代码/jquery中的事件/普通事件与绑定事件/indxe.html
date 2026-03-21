@@ -1,38 +1,42 @@
 <html>
-      <head>
-	         <title>普通事件与绑定事件</title>
-			 <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8"/>
-			 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-			 <script type="text/javascript">
-			    $(document).ready(function(){
-				//普通单击事件
-				  $("#clickTest").click(function(){
-				     alert("普通单击事件--鼠标点击");
-				  }).mouseout(function(){
-				     alert("普通的单击事件--鼠标离开");
-				  });
-				 
-                //绑定的单击事件--本质相当于普通的单击事件的另一种写法				 
-				  $("#bangdingTest").bind("click",function(){
-				    alert("绑定的单击事件--鼠标点击");
-				  }).bind("mouseout",function(){
-				    alert("绑定的单击事件--鼠标离开");
-				  });
-				 //移除绑定事件
-				 $("#removebangdingTest").click(function(){
-				    $("#bangdingTest").unbind();//不写参数默认移除全部效果，类似于removeClass();不写参数相当于移除全部
-				 });
-				/*绑定事件和普通事件的区别：
+  <head>
+    <title>普通事件与绑定事件</title>
+    <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8" />
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        //普通单击事件
+        $('#clickTest')
+          .click(function () {
+            alert('普通单击事件--鼠标点击')
+          })
+          .mouseout(function () {
+            alert('普通的单击事件--鼠标离开')
+          })
+
+        //绑定的单击事件--本质相当于普通的单击事件的另一种写法
+        $('#bangdingTest')
+          .bind('click', function () {
+            alert('绑定的单击事件--鼠标点击')
+          })
+          .bind('mouseout', function () {
+            alert('绑定的单击事件--鼠标离开')
+          })
+        //移除绑定事件
+        $('#removebangdingTest').click(function () {
+          $('#bangdingTest').unbind() //不写参数默认移除全部效果，类似于removeClass();不写参数相当于移除全部
+        })
+        /*绑定事件和普通事件的区别：
 				  区别：1.方便在各种事件之间切换（实际发现也没有什么区别），可以理解为普通事件的另一种写法				  
 				        2.绑定事件可以有移除效果的专用方法，普通事件没有移除的专用方法，一般采用直接删除来移除普通事件
 				*/
-				});
-			 </script>
-      </head>
-	  
-	  <body>
-	         <input type="button" name="" value="普通单击事件" id="clickTest"/>
-	         <input type="button" name="" value="绑定单击事件" id="bangdingTest"/>
-	         <input type="button" name="" value="移除绑定事件" id="removebangdingTest"/>
-	  </body>
+      })
+    </script>
+  </head>
+
+  <body>
+    <input type="button" name="" value="普通单击事件" id="clickTest" />
+    <input type="button" name="" value="绑定单击事件" id="bangdingTest" />
+    <input type="button" name="" value="移除绑定事件" id="removebangdingTest" />
+  </body>
 </html>

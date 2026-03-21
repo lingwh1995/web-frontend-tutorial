@@ -1,10 +1,10 @@
 <html>
-      <head>
-	         <title>jQuery实现节点操作</title>
-			 <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8"/>
-			 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-			 <script type="text/javascript">
-			 /* 
+  <head>
+    <title>jQuery实现节点操作</title>
+    <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8" />
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+      /* 
 			   强大的jQuery
 			   基础知识：写在html的<body>标签中的内容称为元素，也称之为节点，使用jQuery工厂实现以下操作
 			   jQuery的节点操作主要分为以下：
@@ -15,61 +15,59 @@
 				  5.复制节点
 			  注意:利用jQuery插入节点和设置CSS样式的相同之处，若对同一节点进行操作，后面的操作会覆盖前面的操作
 			 */
-			    $(document).ready(function(){
-				
-				  /*$("ul>li:eq(2)").empty();
+      $(document).ready(function () {
+        /*$("ul>li:eq(2)").empty();
 				  $("ul>li:eq(2)").remove();*/
-				 /* var $li4 = $("ul>li:eq(1)").clone()
+        /* var $li4 = $("ul>li:eq(1)").clone()
 				  alert($li4.html()+"---"+$li4.text());*/
-				  
-				  
-				  //var bval = $("input[type='button']").val();
-				  
-				  //1.创建节点功能：a.创建一个新的节点 b.创建的同时给节点赋值 c.创建节点的同时赋值并设置样式
-				  //$("<div></div>")//a.创建一个新的节点 
-				  //$("<div>sone text.....</div>")//b.创建的同时给节点赋值
-				  //$("<div style='color:red'>sone text.....</div>")//创建节点的同时赋值并设置样式				  
-				  
-				  //2. A.插入子节点(在ul内部插入节点)，语法：append/appendTo  prepend/prependTo
-				  //     共有两大类，在最后插入或者在最前插入 注意：原来的父节点总要用双引号引起来，如父节点 "ul"
-				  //方式一： $(A).append(B)表示将B追加到A中，默认插入位置在  最后
-				  var $dli = $("<li>ee</li>")
-				  //$("ul").append($dli);
-				  //方式二： $(B).append(A)表示将B追加到A中，默认插入位置在  最后
-				  $dli.appendTo("ul")
-				  //方式三：$(A).prepend(B)表示将B追加到A中,默认插入位置为  最前
-				  var $dli1 = $("<li>preNode</li>")
-				  //$("ul").prepend($dli1)
-				   //方式四：$(B).prependTo(A)表示将B追加到A中,默认插入位置为  最前
-				   $dli1.prependTo("ul")
-				  //  B.插入同辈节点(在ul外部插入节点)，语法：before/insertBefore  after/inserAfter
-				  var $li2 = $("<li>ul的同辈节点</li>")
-				  $("ul").after($li2) //默认插入位置在 最后
-				  //$("ul").before($li2)  //默认插入位置在 最前
-				  
-				  //3.t替换节点，语法：replaceWith/replaceAll(替换单个节点) 
-				  var $li3 = $("<li>替换后的aa节点</li>")
-				  //$("ul li:eq(0)").replaceWith($li3)
-				  $li3.replaceAll("ul li:eq(0)")
-				});
-				
-				//4.复制节点，语法： clone()
-				/*var $li4 = $("ul>li:eq(1)").clone(true) //不加参数true只复制节点，加了参数则会复制节点和节点所包含的/方法事件
+
+        //var bval = $("input[type='button']").val();
+
+        //1.创建节点功能：a.创建一个新的节点 b.创建的同时给节点赋值 c.创建节点的同时赋值并设置样式
+        //$("<div></div>")//a.创建一个新的节点
+        //$("<div>sone text.....</div>")//b.创建的同时给节点赋值
+        //$("<div style='color:red'>sone text.....</div>")//创建节点的同时赋值并设置样式
+
+        //2. A.插入子节点(在ul内部插入节点)，语法：append/appendTo  prepend/prependTo
+        //     共有两大类，在最后插入或者在最前插入 注意：原来的父节点总要用双引号引起来，如父节点 "ul"
+        //方式一： $(A).append(B)表示将B追加到A中，默认插入位置在  最后
+        var $dli = $('<li>ee</li>')
+        //$("ul").append($dli);
+        //方式二： $(B).append(A)表示将B追加到A中，默认插入位置在  最后
+        $dli.appendTo('ul')
+        //方式三：$(A).prepend(B)表示将B追加到A中,默认插入位置为  最前
+        var $dli1 = $('<li>preNode</li>')
+        //$("ul").prepend($dli1)
+        //方式四：$(B).prependTo(A)表示将B追加到A中,默认插入位置为  最前
+        $dli1.prependTo('ul')
+        //  B.插入同辈节点(在ul外部插入节点)，语法：before/insertBefore  after/inserAfter
+        var $li2 = $('<li>ul的同辈节点</li>')
+        $('ul').after($li2) //默认插入位置在 最后
+        //$("ul").before($li2)  //默认插入位置在 最前
+
+        //3.t替换节点，语法：replaceWith/replaceAll(替换单个节点)
+        var $li3 = $('<li>替换后的aa节点</li>')
+        //$("ul li:eq(0)").replaceWith($li3)
+        $li3.replaceAll('ul li:eq(0)')
+      })
+
+      //4.复制节点，语法： clone()
+      /*var $li4 = $("ul>li:eq(1)").clone(true) //不加参数true只复制节点，加了参数则会复制节点和节点所包含的/方法事件
 				alert($li4.html());*/ //前面的操作会影响这一步，所以这句代码放到了开始执行
-			  
-			    //5.删除节点 remove：删除整个节点 empty：清空节点内容，但保留CSS、事件等
-				/*$("ul>li:eq(2)").empty();
-				$("ul>li:eq(2)").remove();*/  //前面的操作会影响这一步，所以这句代码放到了开始执行
-			 </script>
-      </head>
-	  
-	  <body>
-	         <input type="button" type="button" name="" value="提交"/> 
-	         <ul type=none>
-			    <li>aa</li>
-			    <li style='color:red'>bb</li>
-			    <li>cc</li>
-			    <li>dd</li>
-			 </ul>
-	  </body>
+
+      //5.删除节点 remove：删除整个节点 empty：清空节点内容，但保留CSS、事件等
+      /*$("ul>li:eq(2)").empty();
+				$("ul>li:eq(2)").remove();*/ //前面的操作会影响这一步，所以这句代码放到了开始执行
+    </script>
+  </head>
+
+  <body>
+    <input type="button" type="button" name="" value="提交" />
+    <ul type="none">
+      <li>aa</li>
+      <li style="color: red">bb</li>
+      <li>cc</li>
+      <li>dd</li>
+    </ul>
+  </body>
 </html>

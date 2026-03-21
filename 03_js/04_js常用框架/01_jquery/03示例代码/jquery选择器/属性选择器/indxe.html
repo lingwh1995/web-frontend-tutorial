@@ -1,10 +1,10 @@
 <html>
-      <head>
-	         <title>jQuery属性选择器</title>
-			 <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8"/>
-			 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-			 <script type="text/javascript">
-			 /*
+  <head>
+    <title>jQuery属性选择器</title>
+    <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8" />
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+      /*
 			   属性选择器:
                      a.必须含有属性名
                        [name]
@@ -21,35 +21,49 @@
 					 g.可以通过多个属性选中一个元素
 					   $("input[name='xx'][value='xx']")
 			 */
-			        $(document).ready(function(){
-				 	   //a.必须含有属性名
-					   $("input[name]").css("background","green");
-					   
-					   //b.必须含有属性名，且指定特定的 属性值
-					   $("input[name='email']").css("background","red");//单引号和双引号交叉使用
-					   
-					   //c.必须包含属性名，且属性值 不能为指定的值（但要注意，如果没有该属性，也被选中）
-					   //$("input[name!='address']").css("background","yellow");//因为会影响上面的效果，所以注释掉了，使用时放开注释即可
-					   
-					   //d.必须含有属性名，且属性名是以..开头
-					   $("input[name^='ag']").css("background","pink")
-					   
-					   //e.必须含有属性名，且属性名是以..结尾
-					   $("input[name$='ve']").css("background","#000000");
-					   
-					   //f.必须含有属性名，且属性名必须包含... (模糊查询)
-					   $("input[name*='r']").css("background","orange");//这句的作用效果覆盖了e的作用效果
-					});
-			 </script>
-      </head>
-	  
-	  <body>
-	        用户名：<input type="text" name="name" /><br/>
-			密码  ：<input type="password" name="pwd" /><br/>
-			邮箱  ：<input type="text" name="email" /><br/>
-			地址  ：<input type="text" name="address" /><br/>
-			年龄  ：<input type="text" name="age" /><br/>
-			爱好  ：<input type="text" name="love" /><br/>
-			特长  ：<input type="text" name="preference" /><br/>
-	  </body>
+      $(document).ready(function () {
+        //a.必须含有属性名
+        $('input[name]').css('background', 'green')
+
+        //b.必须含有属性名，且指定特定的 属性值
+        $("input[name='email']").css('background', 'red') //单引号和双引号交叉使用
+
+        //c.必须包含属性名，且属性值 不能为指定的值（但要注意，如果没有该属性，也被选中）
+        //$("input[name!='address']").css("background","yellow");//因为会影响上面的效果，所以注释掉了，使用时放开注释即可
+
+        //d.必须含有属性名，且属性名是以..开头
+        $("input[name^='ag']").css('background', 'pink')
+
+        //e.必须含有属性名，且属性名是以..结尾
+        $("input[name$='ve']").css('background', '#000000')
+
+        //f.必须含有属性名，且属性名必须包含... (模糊查询)
+        $("input[name*='r']").css('background', 'orange') //这句的作用效果覆盖了e的作用效果
+      })
+    </script>
+  </head>
+
+  <body>
+    用户名：
+    <input type="text" name="name" />
+    <br />
+    密码 ：
+    <input type="password" name="pwd" />
+    <br />
+    邮箱 ：
+    <input type="text" name="email" />
+    <br />
+    地址 ：
+    <input type="text" name="address" />
+    <br />
+    年龄 ：
+    <input type="text" name="age" />
+    <br />
+    爱好 ：
+    <input type="text" name="love" />
+    <br />
+    特长 ：
+    <input type="text" name="preference" />
+    <br />
+  </body>
 </html>

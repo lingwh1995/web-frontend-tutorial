@@ -1,41 +1,41 @@
 <html>
-      <head>
-	         <title>jQuery操作html代码+.html()取值和.text()取值的不同</title>
-			 <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8"/>
-			 <script text="html/javascript" src="js/jquery-3.1.1.js"></script>
-			 <script text="html/javascript">
-			    $(document).ready(function(){
-				   $("#guess_jQuery").click(function(){
-				     var myHtml = $("#A").html(2);
-				   });
-				   
-				   $("#print1").click(function(){
-				     var myHtml = $("#A").html();
-				   });
-				   
-				    $("#print1").click(function(){
-					 var myHtml = $("#B").html();
-					 alert(myHtml);//打印渲染详细代码+文本内容
-					});
-					
-					$("#print2").click(function(){
-					 var mytext = $("#B").text();
-					 alert(mytext);//只能打印文本内容
-					});
-				});
-				function guess(){
-				  var text =  document.getElementById("A");
-				  text.innerHTML = "<font style='color:yellow'>2</font>" ;
-				}
-			 </script>
-      </head>
-	  
-	  <body>
-	     <div id="A">1+1=？</div>
-	     <div id="B"><font style="color:red">测试.html()和.text()</font></div>
-		 <input type="button" name="" value="js猜谜语" onclick="guess()"/>
-	     <input type="button" name="" value="jQuery猜谜语" id="guess_jQuery"/>
-		 <input type="button" name="" value="渲染后打印.html()" id="print1"/>
-		 <input type="button" name="" value="渲染后打印.text()" id="print2"/>
-	  </body>
+  <head>
+    <title>jQuery操作html代码+.html()取值和.text()取值的不同</title>
+    <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8" />
+    <script text="html/javascript" src="js/jquery-3.1.1.js"></script>
+    <script text="html/javascript">
+      $(document).ready(function () {
+        $('#guess_jQuery').click(function () {
+          var myHtml = $('#A').html(2)
+        })
+
+        $('#print1').click(function () {
+          var myHtml = $('#A').html()
+        })
+
+        $('#print1').click(function () {
+          var myHtml = $('#B').html()
+          alert(myHtml) //打印渲染详细代码+文本内容
+        })
+
+        $('#print2').click(function () {
+          var mytext = $('#B').text()
+          alert(mytext) //只能打印文本内容
+        })
+      })
+      function guess() {
+        var text = document.getElementById('A')
+        text.innerHTML = "<font style='color:yellow'>2</font>"
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="A">1+1=？</div>
+    <div id="B"><font style="color: red">测试.html()和.text()</font></div>
+    <input type="button" name="" value="js猜谜语" onclick="guess()" />
+    <input type="button" name="" value="jQuery猜谜语" id="guess_jQuery" />
+    <input type="button" name="" value="渲染后打印.html()" id="print1" />
+    <input type="button" name="" value="渲染后打印.text()" id="print2" />
+  </body>
 </html>

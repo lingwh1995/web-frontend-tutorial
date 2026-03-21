@@ -1,10 +1,10 @@
 <html>
-      <head>
-	         <title>jQuery基础</title>
-			 <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8"/>
-             <script type="text/javascript" src="js/jquery-3.1.1.js"></script>         
-		     <script type="text/javascript">
-             /*
+  <head>
+    <title>jQuery基础</title>
+    <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8" />
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+      /*
 			   注意：1.$符号相当于jQuery，二者可以相互替换 2.js中的onload()的功能相当于jQuery中的ready()
 			         2.onload()和ready()的区别，onload()一个页面只能写一个，而且必须等到网页的中元素全部加载
 					   完毕才能执行；ready()一个页面可以写多个，而且只要网页中元素的结构加载完毕就可以执行
@@ -12,17 +12,16 @@
 			   jQuery对象和Dom对象
 			         1.通过js获取的对象，就称之为DOM对象 var user = document.getElemenetById("user"); user就是DOM对象，Dom元素可以简单理解为HTML页面中的元素
 					 2.通过jQuery获取的对象就称之为jQurey对象
-			 */			 
-			         jQuery(document).ready(function(){
-					    alert("Hello World");
-					 });
-					 
-					 //简化写法
-					 $(function(){
-					    alert("jQuery的简化写法");
-					 });
-			 </script>
-	  </head>
-	  <body>
-	  </body>
+			 */
+      jQuery(document).ready(function () {
+        alert('Hello World')
+      })
+
+      //简化写法
+      $(function () {
+        alert('jQuery的简化写法')
+      })
+    </script>
+  </head>
+  <body></body>
 </html>

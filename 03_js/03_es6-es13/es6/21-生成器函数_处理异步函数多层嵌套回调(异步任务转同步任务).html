@@ -11,16 +11,16 @@
        * 导致代码逻辑混乱、难以维护、变量作用域冲突等问题。
        */
       /*
-    setTimeout(() => {
-      console.log('one...')
       setTimeout(() => {
-        console.log('two...')
+        console.log('one...')
         setTimeout(() => {
-          console.log('three...')
-        }, 3000)
-      }, 2000)
-    }, 1000)
-    */
+          console.log('two...')
+          setTimeout(() => {
+            console.log('three...')
+          }, 3000)
+        }, 2000)
+      }, 1000)
+      */
 
       /**
        * ES6 生成器函数处理方式：

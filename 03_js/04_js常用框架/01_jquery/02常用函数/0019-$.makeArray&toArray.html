@@ -1,57 +1,58 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-	<script src="./jquery-3.3.1.js"></script>
-	<script>
-		$(function(){
-			var lis = document.getElementsByTagName('<li>');
-			/**
-			 * 不是数组，调用数组的push方法，会报错
-			 */
-			//lis.push();
-			
-			//$.makeArray():把类似数组的结构转换为真正的数组
-			var $lis = $.makeArray(lis);
-			/**
-			 * 调用$.makeArray()将其装换为数组，调用数组的push方法
-			 */
-			$lis.push('11');
-			console.log($lis);
-			
-			/**
-			 * toArray():转成原生的数组
-			 */
-			 console.log('------------------------');
-			 /**
-			  * 调用数组的push()方法，并不生效
-			  */
-			 $('div').push('FASDF');
-			 console.log($('div'));
-			 /**
-			  * 先调用toArray()方法后，再调用数组的push()方法
-			  */
-			 var $divArr = $('div').toArray();
-			 $divArr.push('fasdf');
-			 console.log($divArr);
-		});
-    </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="./jquery-3.3.1.js"></script>
+    <script>
+      $(function () {
+        var lis = document.getElementsByTagName('<li>')
+        /**
+         * 不是数组，调用数组的push方法，会报错
+         */
+        //lis.push();
 
-</head>
-<body>
-	<ul>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ul>
-	<div>1</div>
-	<div>2</div>
-	<div>3</div>
-</body>
+        //$.makeArray():把类似数组的结构转换为真正的数组
+        var $lis = $.makeArray(lis)
+        /**
+         * 调用$.makeArray()将其装换为数组，调用数组的push方法
+         */
+        $lis.push('11')
+        console.log($lis)
+
+        /**
+         * toArray():转成原生的数组
+         */
+        console.log('------------------------')
+        /**
+         * 调用数组的push()方法，并不生效
+         */
+        $('div').push('FASDF')
+        console.log($('div'))
+        /**
+         * 先调用toArray()方法后，再调用数组的push()方法
+         */
+        var $divArr = $('div').toArray()
+        $divArr.push('fasdf')
+        console.log($divArr)
+      })
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </body>
 </html>

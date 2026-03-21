@@ -1,65 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>使用 call、apply 和 bind 改变 this 指向</title>
-  <script>
-    var obj = {
-        name: '张三'
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>使用 call、apply 和 bind 改变 this 指向</title>
+    <script>
+      var obj = {
+        name: '张三',
+      }
 
-    function add(a, b) {
+      function add(a, b) {
         console.log(this)
         return a + b
-    }
+      }
 
-    /**
-     * 一、this 指向的基础规则
-     * 1. 以函数形式调用：this 永远是 window。
-     * 2. 以方法形式调用：this 是调用该方法的对象。
-     * 3. 以构造函数形式调用：this 是新创建的对象。
-     * 4. 使用 call 和 apply 调用：this 是手动指定的对象。
-     * 
-     * 二、call()、apply() 和 bind() 的异同点
-     * 1. 相同点：都可以用来改变函数内部 this 的指向。
-     * 2. 参数传递：
-     *    - call(): 参数直接传递（逗号隔开）。
-     *    - apply(): 参数必须封装成【数组】进行传递。
-     * 3. 执行时机：
-     *    - call() 和 apply(): 修改指向并【立即调用】函数。
-     *    - bind(): 【返回新函数】，不会立即执行，需要手动调用。
-     * 
-     * 三、场景选型建议
-     * 1. call(): 确定参数个数，追求代码直观时使用。
-     * 2. apply(): 不确定参数个数，或参数本身已在数组中时使用（如利用 Math.max 求数组最大值）。
-     */
+      /**
+       * 一、this 指向的基础规则
+       * 1. 以函数形式调用：this 永远是 window。
+       * 2. 以方法形式调用：this 是调用该方法的对象。
+       * 3. 以构造函数形式调用：this 是新创建的对象。
+       * 4. 使用 call 和 apply 调用：this 是手动指定的对象。
+       *
+       * 二、call()、apply() 和 bind() 的异同点
+       * 1. 相同点：都可以用来改变函数内部 this 的指向。
+       * 2. 参数传递：
+       *    - call(): 参数直接传递（逗号隔开）。
+       *    - apply(): 参数必须封装成【数组】进行传递。
+       * 3. 执行时机：
+       *    - call() 和 apply(): 修改指向并【立即调用】函数。
+       *    - bind(): 【返回新函数】，不会立即执行，需要手动调用。
+       *
+       * 三、场景选型建议
+       * 1. call(): 确定参数个数，追求代码直观时使用。
+       * 2. apply(): 不确定参数个数，或参数本身已在数组中时使用（如利用 Math.max 求数组最大值）。
+       */
 
-    // 1. 默认情况：函数中 this 指向 Window
-    console.log(add(1, 2))
-    console.log('---------------------------')
+      // 1. 默认情况：函数中 this 指向 Window
+      console.log(add(1, 2))
+      console.log('---------------------------')
 
-    // 2. call() 方法：使 this 指向 obj 对象
-    // - 特点：直接传参 1, 2
-    console.log(add.call(obj, 1, 2))
-    console.log('---------------------------')
+      // 2. call() 方法：使 this 指向 obj 对象
+      // - 特点：直接传参 1, 2
+      console.log(add.call(obj, 1, 2))
+      console.log('---------------------------')
 
-    // 3. apply() 方法：使 this 指向 obj 对象
-    // - 特点：数组传参 [1, 2]
-    console.log(add.apply(obj, [1, 2]))
-    console.log('---------------------------')
+      // 3. apply() 方法：使 this 指向 obj 对象
+      // - 特点：数组传参 [1, 2]
+      console.log(add.apply(obj, [1, 2]))
+      console.log('---------------------------')
 
-    // 4. bind() 方法：使 this 指向 obj 对象
-    // - 特点：返回一个预设了 this 和参数的新函数，必须加 () 触发执行
+      // 4. bind() 方法：使 this 指向 obj 对象
+      // - 特点：返回一个预设了 this 和参数的新函数，必须加 () 触发执行
 
-    // bind 写法一：直接调用返回的函数
-    // console.log(add.bind(obj, 1, 2)())
+      // bind 写法一：直接调用返回的函数
+      // console.log(add.bind(obj, 1, 2)())
 
-    // bind 写法二：先保存函数名，再手动调用
-    const bindFun = add.bind(obj, 1, 2)
-    console.log(bindFun());
-  </script>
-</head>
-<body>
-</body>
+      // bind 写法二：先保存函数名，再手动调用
+      const bindFun = add.bind(obj, 1, 2)
+      console.log(bindFun())
+    </script>
+  </head>
+  <body></body>
 </html>

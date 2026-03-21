@@ -1,35 +1,36 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-	<script src="./jquery-3.3.1.js"></script>
-	<script>
-		/**
-		 * eq()/first()/last:底层调用pushStack()
-		 * 		first():底层调用eq(0)方法	
-		 *		last():底层调用eq(1)方法
-		 */
-		$(function(){
-			$('div').eq(0).css("color","blue");
-			$('div').eq(1).css("color","blue");
-			$('div').eq(-1).css("color","blue");
-			$('div').first().css("background","red");
-			$('div').last().css("background","red");
-		});
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="./jquery-3.3.1.js"></script>
+    <script>
+      /**
+       * eq()/first()/last:底层调用pushStack()
+       * 		first():底层调用eq(0)方法
+       *		last():底层调用eq(1)方法
+       */
+      $(function () {
+        $('div').eq(0).css('color', 'blue')
+        $('div').eq(1).css('color', 'blue')
+        $('div').eq(-1).css('color', 'blue')
+        $('div').first().css('background', 'red')
+        $('div').last().css('background', 'red')
+      })
     </script>
-
-</head>
-<body>
-	<div>div</div>
-	<div>div</div>
-	<div>div</div>
-	<div>div</div>
-	<div>div</div>
-	<div>div</div>
-	<div>div</div>
-</body>
+  </head>
+  <body>
+    <div>div</div>
+    <div>div</div>
+    <div>div</div>
+    <div>div</div>
+    <div>div</div>
+    <div>div</div>
+    <div>div</div>
+  </body>
 </html>

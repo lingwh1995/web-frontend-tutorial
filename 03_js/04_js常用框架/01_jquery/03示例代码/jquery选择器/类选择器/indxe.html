@@ -1,10 +1,10 @@
 <html>
-      <head>
-	         <title>jQuery的类选择器+jQuery设置/获取CSS样式：</title>
-			 <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8"/>
-             <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-             <script type="text/javascript">
-			    /*
+  <head>
+    <title>jQuery的类选择器+jQuery设置/获取CSS样式：</title>
+    <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8" />
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+      /*
 				   jQuery的核心/根基就是jQuery选择器，jQuery选择器的优先级高于直接CSS
 				   
 				   jQuery的四种选择器：1.id选择器 $("#id值")
@@ -12,42 +12,40 @@
 									   3.标签选择器 $("标签名")
 									   4.全局选择器 $("*")
 				*/
-				    $(document).ready(function(){
-				    //类选择器
-					
-					//设置CSS样式
-					//注意：使用jQuery设置样式可以一次设置一个样式，也可以一次设置多个样式
-						//$(".myclass").css("color","red").css("font-size","50px") ;//						
-						//上面的写法，等同于下面的写法
-						$(".myclass").css("color","yellow");
-						$(".myclass").css("font-size","100px");
-					//获取CSS样式	语法 jQuery对象.css("属性名");
-						var color = $(".myclass").css("color");
-						alert(color);
-						
-					//标签选择器
-					$("p").css("color","red").css("font-size","70px");
-					});
-             </script>	
-             <style type="text/css">
-			        .myclass
-					{
-					 /* color:yellow ; */
-					}
-					p
-					{
-					  color:yellow ;
-					}
-             </style>			 
-	 </head>
-	 
-	  <body>
-	         <span class="myclass">H</span>
-	         <span class="myclass">e</span>
-	         <span class="myclass">l</span>
-	         <span class="myclass">l</span>
-	         <span class="myclass">o</span>
-			 <br/> 
-			 <p>World</p>
-	  </body>
+      $(document).ready(function () {
+        //类选择器
+
+        //设置CSS样式
+        //注意：使用jQuery设置样式可以一次设置一个样式，也可以一次设置多个样式
+        //$(".myclass").css("color","red").css("font-size","50px") ;//
+        //上面的写法，等同于下面的写法
+        $('.myclass').css('color', 'yellow')
+        $('.myclass').css('font-size', '100px')
+        //获取CSS样式	语法 jQuery对象.css("属性名");
+        var color = $('.myclass').css('color')
+        alert(color)
+
+        //标签选择器
+        $('p').css('color', 'red').css('font-size', '70px')
+      })
+    </script>
+    <style type="text/css">
+      .myclass {
+        /* color:yellow ; */
+      }
+      p {
+        color: yellow;
+      }
+    </style>
+  </head>
+
+  <body>
+    <span class="myclass">H</span>
+    <span class="myclass">e</span>
+    <span class="myclass">l</span>
+    <span class="myclass">l</span>
+    <span class="myclass">o</span>
+    <br />
+    <p>World</p>
+  </body>
 </html>

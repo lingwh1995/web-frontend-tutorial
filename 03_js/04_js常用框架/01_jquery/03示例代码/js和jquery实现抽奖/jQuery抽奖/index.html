@@ -1,39 +1,40 @@
 <html>
-     <head>
-	      <title>jQueryÊµÏÖ³é½±</title>
-		  <mate http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-		  <meta name="keywords" content=""/>
-		  <meta name="deacription" content=""/>
-		  <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
-		  <script type="text/javascript">
-		        $(document).ready(function(){
-				   var myInterval ; 
-				   $("input[name='choice']").click(function(){
-					   if($(this).val()=="¿ªÊ¼"){
-					      $(this).val("Í£Ö¹");
-						  myInterval = setInterval("start()","1000");
-					   }else if($(this).val()=="Í£Ö¹"){
-					      $(this).val("¿ªÊ¼");
-						  clearInterval(myInterval);
-					   }				      
-				   });
-				});
-				
-				var names = ["ÕÅÈý","ÀîËÄ","ÍõÎå","ÕÔÁù","Ëïçù"] ;
-				var i = 0 ;
-				var num = Math.floor(Math.random()*5) ;
-				function start(){
-				    if(i==name.lenght){
-					   i = 0 ;
-					}
-					$("span").html(names[i]);
-					i++;
-				}
-		  </script>
-     </head>
+  <head>
+    <title>jQueryÊµï¿½Ö³é½±</title>
+    <mate http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="keywords" content="" />
+    <meta name="deacription" content="" />
+    <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var myInterval
+        $("input[name='choice']").click(function () {
+          if ($(this).val() == 'ï¿½ï¿½Ê¼') {
+            $(this).val('Í£Ö¹')
+            myInterval = setInterval('start()', '1000')
+          } else if ($(this).val() == 'Í£Ö¹') {
+            $(this).val('ï¿½ï¿½Ê¼')
+            clearInterval(myInterval)
+          }
+        })
+      })
 
-	 <body>
-	      <input type="button" name="choice" value="¿ªÊ¼"/>
-	      ÐÒÔË¹ÛÖÚ£º<span></span>	     
-	 </body>
+      var names = ['ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½']
+      var i = 0
+      var num = Math.floor(Math.random() * 5)
+      function start() {
+        if (i == name.lenght) {
+          i = 0
+        }
+        $('span').html(names[i])
+        i++
+      }
+    </script>
+  </head>
+
+  <body>
+    <input type="button" name="choice" value="ï¿½ï¿½Ê¼" />
+    ï¿½ï¿½ï¿½Ë¹ï¿½ï¿½Ú£ï¿½
+    <span></span>
+  </body>
 </html>

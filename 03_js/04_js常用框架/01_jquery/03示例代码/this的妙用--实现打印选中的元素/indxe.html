@@ -1,26 +1,26 @@
 <html>
-      <head>
-	         <title>this的妙用--实现打印选中的元素</title>
-			 <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8"/>
-			 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-			 <script type="text/javascript">
-			    $(document).ready(function(){
-				   $("option").click(function(){
-				     // $(this).css("background","red");
-					 //alert($(this).val());
-					  $("#city").html($(this).val())   ;
-				   });
-				});
-			 </script>
-      </head>
-	    
-	  <body>
-	         <select>
-			    <option selected=selected>城市</option>
-			    <option>西安</option>
-			    <option>北京</option>
-			    <option>上海</option>
-			 </select>
-			 <div id="city">1</div>
-	  </body>
+  <head>
+    <title>this的妙用--实现打印选中的元素</title>
+    <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8" />
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('option').click(function () {
+          // $(this).css("background","red");
+          //alert($(this).val());
+          $('#city').html($(this).val())
+        })
+      })
+    </script>
+  </head>
+
+  <body>
+    <select>
+      <option selected="selected">城市</option>
+      <option>西安</option>
+      <option>北京</option>
+      <option>上海</option>
+    </select>
+    <div id="city">1</div>
+  </body>
 </html>

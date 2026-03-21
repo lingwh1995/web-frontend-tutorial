@@ -1,33 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <script src="./jquery-3.3.1.js"></script>
-    <script >
-        $(function(){
-            $('#btn1').on('click mouseout',function() {
-                alert('一个按钮绑定多个事件...');
-            });
-            $('#btn2').on({
-                click: function(e) {
-                    alert('触发了'+e.type+'事件...');
-                },
-                mouseout: function(e) {
-                    alert('触发了'+e.type+'事件...');
-                }  
-            });
-            $('#btn3').on('click',function() {
-                $('#btn2').off("click");
-            });
-        });
+    <script>
+      $(function () {
+        $('#btn1').on('click mouseout', function () {
+          alert('一个按钮绑定多个事件...')
+        })
+        $('#btn2').on({
+          click: function (e) {
+            alert('触发了' + e.type + '事件...')
+          },
+          mouseout: function (e) {
+            alert('触发了' + e.type + '事件...')
+          },
+        })
+        $('#btn3').on('click', function () {
+          $('#btn2').off('click')
+        })
+      })
     </script>
-</head>
-<body>
-    <input id="btn1" type="button" value="测试一个按钮绑定多个事件(多个事件触发同一个函数"/>
-    <input id="btn2" type="button" value="测试一个按钮绑定多个事件(多个事件触发同多个函数"/>
-    <input id="btn3" type="button" value="第二个按钮移除click事件"/>
-</body>
+  </head>
+  <body>
+    <input id="btn1" type="button" value="测试一个按钮绑定多个事件(多个事件触发同一个函数" />
+    <input id="btn2" type="button" value="测试一个按钮绑定多个事件(多个事件触发同多个函数" />
+    <input id="btn3" type="button" value="第二个按钮移除click事件" />
+  </body>
 </html>

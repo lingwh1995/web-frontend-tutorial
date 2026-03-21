@@ -1,38 +1,37 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-	<script src="./jquery-3.3.1.js"></script>
-	<script>
-		/**
-		 * merge用法1:合并数组
-		 */
-		var arr1 = ['a','b'];
-		var arr2 = ['c','d'];
-		console.log(arr1);
-		console.log($.merge(arr1,arr2));
-		
-		/**
-		 * merge用法1:合并json+json/json+数组 = json格式 (这里的json需要满足如下条件:1.有下标 2.有length属性)
-		 */
-		 var arr3 = {
-			1:'AA',
-			2:'BB',
-			length:2
-		 };
-		 console.log($.merge(arr3,arr2));
-		 /**
-		  * 判断一个对象是不是jquery对象
-		  */
-		 console.log($('<li></li>').jquery);
-    </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="./jquery-3.3.1.js"></script>
+    <script>
+      /**
+       * merge用法1:合并数组
+       */
+      var arr1 = ['a', 'b']
+      var arr2 = ['c', 'd']
+      console.log(arr1)
+      console.log($.merge(arr1, arr2))
 
-</head>
-<body>
-	
-</body>
+      /**
+       * merge用法1:合并json+json/json+数组 = json格式 (这里的json需要满足如下条件:1.有下标 2.有length属性)
+       */
+      var arr3 = {
+        1: 'AA',
+        2: 'BB',
+        length: 2,
+      }
+      console.log($.merge(arr3, arr2))
+      /**
+       * 判断一个对象是不是jquery对象
+       */
+      console.log($('<li></li>').jquery)
+    </script>
+  </head>
+  <body></body>
 </html>

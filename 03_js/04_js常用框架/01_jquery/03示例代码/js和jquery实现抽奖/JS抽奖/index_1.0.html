@@ -1,30 +1,31 @@
 <html>
-      <head>
-	         <title>js°æ³é½±1.0</title>
-			 <meta http-equiv="Content-Type" content="text/html;charaset=utf-8"/>
-             <script type="text/javascript">
-			        var myInterval ;
-			        function start(){
-					     myInterval = setInterval("test()","100");
-					}
-					var names = ["a","b","c","d","e","f"];
-					var i = 0 ;
-					function test(){
-						var spanTextTemp = document.getElementsByTagName("span");						
-							 if(i==names.length){
-							    i=0;
-							 }				
-							 spanTextTemp[0].innerHTML = names[i];	
-							 i++;			 
-					}
-					function stop(){
-					    clearInterval(myInterval);
-					}
-			 </script>
-	  </head>
-	  <body>
-	        <font color="green">ÐÒÔË¹ÛÖÚ£º</font><span style="color:red;"></span>
-	        <input type="button" value="³é½±" onclick="start()"/>
-	        <input type="button" value="Í£Ö¹" onclick="stop()"/>
-	  </body>
+  <head>
+    <title>jsï¿½ï¿½é½±1.0</title>
+    <meta http-equiv="Content-Type" content="text/html;charaset=utf-8" />
+    <script type="text/javascript">
+      var myInterval
+      function start() {
+        myInterval = setInterval('test()', '100')
+      }
+      var names = ['a', 'b', 'c', 'd', 'e', 'f']
+      var i = 0
+      function test() {
+        var spanTextTemp = document.getElementsByTagName('span')
+        if (i == names.length) {
+          i = 0
+        }
+        spanTextTemp[0].innerHTML = names[i]
+        i++
+      }
+      function stop() {
+        clearInterval(myInterval)
+      }
+    </script>
+  </head>
+  <body>
+    <font color="green">ï¿½ï¿½ï¿½Ë¹ï¿½ï¿½Ú£ï¿½</font>
+    <span style="color: red"></span>
+    <input type="button" value="ï¿½é½±" onclick="start()" />
+    <input type="button" value="Í£Ö¹" onclick="stop()" />
+  </body>
 </html>

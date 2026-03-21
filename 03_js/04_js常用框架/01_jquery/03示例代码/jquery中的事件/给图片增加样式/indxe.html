@@ -1,56 +1,51 @@
 <html>
-      <head>
-	         <title>一次性给图片增加或删除多个样式</title>
-			 <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8"/>
-			 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-			 <script type="text/javascript">
-			    /*方式一 1.hover 2.*/
-				$(document).ready(function(){
-					$("#addMyStyle1Bt").click(function(){
-					   //一次设置一个css样式
-					   //$("img").css("border","1px solid red");//只能增加一个样式
-					   //一次设置多(n)个css样式：（两种方式）
-					   //注意：1.增加的多个样式每一个都写在css设置块中
-					   //      2.多个样式之间用空格隔开
-					      //方式一
-					   //$("img").addClass("myBorderStyle1 myBorderStyle2");	
-                          //方式二
-                        $("img").addClass("myBorderStyle1").addClass("myBorderStyle2");							  
-					  
-					});
-					$("#removeMyStyle2Bt").click(function(){
-					    //一次性删除一个或者多个样式:（三种方式）
-						  //方式一
-					   //$("img").removeClass("myBorderStyle1 myBorderStyle2");
-					      //方式二
-						 //$("img").removeClass("myBorderStyle1").removeClass("myBorderStyle2");
-					      //方式三：如果removeClass();的参数为空，则证明删除全部样式
-						 $("img").removeClass();
-					});
-				});
-				
-			 </script>
-			 <style type="text/css">
-			    img:hover
-				{
-				 /* border:2px solid red ;*/
-				}
-				.myBorderStyle1
-				{
-				   border:2px solid red ;
-				   opacity:0.3;
-				}
-				.myBorderStyle2
-				{
-				  width:500px;
-				  height:500px ;
-				}
-			 </style>
-      </head>
-	  
-	  <body>
-	         <img src="a.png" height="300px" width="300px"/>
-			 <input type="button" value="增加多个样式" id="addMyStyle1Bt">
-			 <input type="button" value="失去多个样式" id="removeMyStyle2Bt">
-	  </body >
+  <head>
+    <title>一次性给图片增加或删除多个样式</title>
+    <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8" />
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+      /*方式一 1.hover 2.*/
+      $(document).ready(function () {
+        $('#addMyStyle1Bt').click(function () {
+          //一次设置一个css样式
+          //$("img").css("border","1px solid red");//只能增加一个样式
+          //一次设置多(n)个css样式：（两种方式）
+          //注意：1.增加的多个样式每一个都写在css设置块中
+          //      2.多个样式之间用空格隔开
+          //方式一
+          //$("img").addClass("myBorderStyle1 myBorderStyle2");
+          //方式二
+          $('img').addClass('myBorderStyle1').addClass('myBorderStyle2')
+        })
+        $('#removeMyStyle2Bt').click(function () {
+          //一次性删除一个或者多个样式:（三种方式）
+          //方式一
+          //$("img").removeClass("myBorderStyle1 myBorderStyle2");
+          //方式二
+          //$("img").removeClass("myBorderStyle1").removeClass("myBorderStyle2");
+          //方式三：如果removeClass();的参数为空，则证明删除全部样式
+          $('img').removeClass()
+        })
+      })
+    </script>
+    <style type="text/css">
+      img:hover {
+        /* border:2px solid red ;*/
+      }
+      .myBorderStyle1 {
+        border: 2px solid red;
+        opacity: 0.3;
+      }
+      .myBorderStyle2 {
+        width: 500px;
+        height: 500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img src="a.png" height="300px" width="300px" />
+    <input type="button" value="增加多个样式" id="addMyStyle1Bt" />
+    <input type="button" value="失去多个样式" id="removeMyStyle2Bt" />
+  </body>
 </html>

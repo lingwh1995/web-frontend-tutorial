@@ -1,77 +1,77 @@
 <html>
-      <head>
-	         <title>获取div的颜色、高度、宽度（获取属性值）的几种方式+offset</title>
-			 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-			 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-			 <script type="text/javascript">
-			      $(document).ready(function(){
-				    //传统方式获取div的属性
-					//var $divHeight = $("div").css("height");
-					//专用方式获取div的属性
-					//var $divHeight = $("div").height("10000");
-					//var $divWidth = $("div").width();
-					//attr获取div高度
-					$("#print").click(function(){
-					    var $divHeight = $("img").attr("height","10px");
-					   // var $divHeight = $("img").attr("height");
-					   //alert($divHeight);输出undefined
-					   
-					 	//好像css设置会对attr()取值造成影响，但是不会对赋值造成影响
-					});
-					
-					//测试offset——偏移量
-					//取值
-					$("#offsetTest1").click(function(){
-					    alert( $("img").offset().top);
-					    alert( $("img").offset().left);
-					});
-					//赋值
-					$("#offsetTest2").click(function(){
-					   $("img").offset({top:100,left:200});
-					});
-					
-					//利用jQuery给div设置样式
-					//$("div").css("height",1000px); --错误写法
-					
-					//给div一次设置一个样式
-					//$("div").css("height","1000px");
-					
-					//给div一次设置多个样式
-					//方式一：
-					//$("div").css("height","1000px").css("width","1000px");
-					//方式二：
-					//$("div").addClass("myclass1 myclass2");
-					$("div").addClass("myclass1").addClass("myclass2");
-					
-				  });
-			 </script>
-			 <style type="text/css">
-			     /* div
+  <head>
+    <title>获取div的颜色、高度、宽度（获取属性值）的几种方式+offset</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        //传统方式获取div的属性
+        //var $divHeight = $("div").css("height");
+        //专用方式获取div的属性
+        //var $divHeight = $("div").height("10000");
+        //var $divWidth = $("div").width();
+        //attr获取div高度
+        $('#print').click(function () {
+          var $divHeight = $('img').attr('height', '10px')
+          // var $divHeight = $("img").attr("height");
+          //alert($divHeight);输出undefined
+
+          //好像css设置会对attr()取值造成影响，但是不会对赋值造成影响
+        })
+
+        //测试offset——偏移量
+        //取值
+        $('#offsetTest1').click(function () {
+          alert($('img').offset().top)
+          alert($('img').offset().left)
+        })
+        //赋值
+        $('#offsetTest2').click(function () {
+          $('img').offset({ top: 100, left: 200 })
+        })
+
+        //利用jQuery给div设置样式
+        //$("div").css("height",1000px); --错误写法
+
+        //给div一次设置一个样式
+        //$("div").css("height","1000px");
+
+        //给div一次设置多个样式
+        //方式一：
+        //$("div").css("height","1000px").css("width","1000px");
+        //方式二：
+        //$("div").addClass("myclass1 myclass2");
+        $('div').addClass('myclass1').addClass('myclass2')
+      })
+    </script>
+    <style type="text/css">
+      /* div
 				  {
 				    background:yellow ;
 					border:1px solid red ;
 					width:500px;
 					height:500px;
-				  }*/				
-				  .myclass1
-				  {
-				    background:orange ;
-					border:1px solid red ;
-					width:500px;
-					height:500;
-				  }
-				  .myclass2
-				  {
-				    opacity:0.5;
-				  }
-			 </style>
-      </head>
-	  
-	  <body>
-	         <div>Hello World</div>
-			 <input type="button" value="改变图片高度" id="print"/><br/>
-			 <input type="button" value="测试offset" id="offsetTest1"/><br/>
-			 <input type="button" value="改变offset" id="offsetTest2"/><br/>
-			 <img src="a.png" title="这是一个图片"/>
-	  </body>
+				  }*/
+      .myclass1 {
+        background: orange;
+        border: 1px solid red;
+        width: 500px;
+        height: 500;
+      }
+      .myclass2 {
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>Hello World</div>
+    <input type="button" value="改变图片高度" id="print" />
+    <br />
+    <input type="button" value="测试offset" id="offsetTest1" />
+    <br />
+    <input type="button" value="改变offset" id="offsetTest2" />
+    <br />
+    <img src="a.png" title="这是一个图片" />
+  </body>
 </html>

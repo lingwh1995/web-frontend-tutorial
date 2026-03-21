@@ -1,10 +1,10 @@
 <html>
-      <head>
-	         <title>jQuery中的事件</title>
-			 <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8"/>
-			 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-			 <script type="text/javascript">
-			 /*
+  <head>
+    <title>jQuery中的事件</title>
+    <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8" />
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+      /*
 			   jQuery事件概述：jQuery事件是对JavaScript方法的封装，常用事件分类如下
 			      --基础事件
 					  window事件
@@ -19,50 +19,49 @@
 			          2.从手写位置来看，方法写在ready()外的function(){}中，事件写在ready()中的function中
                注意：任何方法都可以等价为事件，任何事件也可以等价为方法					  
 			 */
-			 
-			 //键盘事件
-			 /*以show()和hide()在JS和Query中的区别为例来看：*/
-			       $(document).ready(function(){
-				      $("#showbutton").click(function(){
-					     $("#mydiv").show();
-					  
-					   
-					  });
-					  $("#hidebutton").click(function(){
-					     $("#mydiv").hide();					 					    
-					  });
-					  $("#mydiv").mouseover(function(){
-					     $("#mydiv").css("background","red");						
-					  });
-					  $("#mydiv").mouseout(function(){
-					    // $("#mydiv").css("background","none");
-						$(this).css("background","none");
-					  });
-				   });
-				   //js实现显示
-				   function myshow1(){
-				     $("#mydiv").show();
-				   }
-				   //js实现隐藏
-				   function myhide1(){
-				     $("#mydiv").hide();
-				   }
-				   
-			//键盘事件
-			$(document).ready(function(){
-			    $("body").keydown(function(event){//body--标签选择器 document--整个文档
-				  //alert(event.keyCode);//利用keyCode监听用户输入的内容
-				});
-			});
-			 </script>
-      </head>
-	  
-	  <body>
-	         <div id="mydiv">这是是用来测试显示与隐藏的内容</div>
-	         <input type="button" name="" value="js方法实现显示" onclick="myshow1()"/>
-	         <input type="button" name="" value="js方法实现隐藏" onclick="myhide1()"/>
-	         <br/>
-			 <input type="button" name="" value="jQuery事件实现显示" id="showbutton"/>
-			 <input type="button" name="" value="jQuery事件实现隐藏" id="hidebutton"/>
-	  </body>
+
+      //键盘事件
+      /*以show()和hide()在JS和Query中的区别为例来看：*/
+      $(document).ready(function () {
+        $('#showbutton').click(function () {
+          $('#mydiv').show()
+        })
+        $('#hidebutton').click(function () {
+          $('#mydiv').hide()
+        })
+        $('#mydiv').mouseover(function () {
+          $('#mydiv').css('background', 'red')
+        })
+        $('#mydiv').mouseout(function () {
+          // $("#mydiv").css("background","none");
+          $(this).css('background', 'none')
+        })
+      })
+      //js实现显示
+      function myshow1() {
+        $('#mydiv').show()
+      }
+      //js实现隐藏
+      function myhide1() {
+        $('#mydiv').hide()
+      }
+
+      //键盘事件
+      $(document).ready(function () {
+        $('body').keydown(function (event) {
+          //body--标签选择器 document--整个文档
+          //alert(event.keyCode);//利用keyCode监听用户输入的内容
+        })
+      })
+    </script>
+  </head>
+
+  <body>
+    <div id="mydiv">这是是用来测试显示与隐藏的内容</div>
+    <input type="button" name="" value="js方法实现显示" onclick="myshow1()" />
+    <input type="button" name="" value="js方法实现隐藏" onclick="myhide1()" />
+    <br />
+    <input type="button" name="" value="jQuery事件实现显示" id="showbutton" />
+    <input type="button" name="" value="jQuery事件实现隐藏" id="hidebutton" />
+  </body>
 </html>

@@ -1,45 +1,45 @@
 <html>
-      <head>
-	         <title>jQuery复合选择器</title>
-			 <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8"/>
-			 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-			 <script type="text/javascript">
-			 /*
+  <head>
+    <title>jQuery复合选择器</title>
+    <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8" />
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+      /*
 			   jQuery的复合选择器有三种：
 			         1.交集选择器：连着写
 					 2.并集选择器： ,
 			 
 			 */
-			        $(document).ready(function(){
-					   //jQuery的全局选择器
-					   //$("*").css("color","red");
-					   //$("li").css("color","red").css("font-size","20px");
-					   
-                       //交集选择器(直接连着写)
-                       $("li#A").css("color","red").css("font-size","20px");
-                       $("li.myclass").css("color","yellow").css("font-size","30px");	
+      $(document).ready(function () {
+        //jQuery的全局选择器
+        //$("*").css("color","red");
+        //$("li").css("color","red").css("font-size","20px");
 
-					   //并集选择器(用逗号分隔)
-					   $("ol,#B").css("color","blue").css("font-size","30px");
-					});
-			 </script>
-      </head>
-	  
-	  <body>
-	        <ul type=none>
-			     <li id="A">ul-H</li>
-			     <li class="myclass">ul-e</li>
-			     <li class="myclass">ul-l</li>
-			     <li class="myclass">ul-l</li>
-			     <li class="myclass">ul-o</li>
-            </ul>	
-            <ol type=none>	
-                 <li>ol-W</li>			
-                 <li>ol-o</li>			
-                 <li>ol-r</li>			
-                 <li>ol-l</li>			
-                 <li>ol-d</li>			
-            </ol>
-           <div id="B">Hello World</div>
-	  </body>
+        //交集选择器(直接连着写)
+        $('li#A').css('color', 'red').css('font-size', '20px')
+        $('li.myclass').css('color', 'yellow').css('font-size', '30px')
+
+        //并集选择器(用逗号分隔)
+        $('ol,#B').css('color', 'blue').css('font-size', '30px')
+      })
+    </script>
+  </head>
+
+  <body>
+    <ul type="none">
+      <li id="A">ul-H</li>
+      <li class="myclass">ul-e</li>
+      <li class="myclass">ul-l</li>
+      <li class="myclass">ul-l</li>
+      <li class="myclass">ul-o</li>
+    </ul>
+    <ol type="none">
+      <li>ol-W</li>
+      <li>ol-o</li>
+      <li>ol-r</li>
+      <li>ol-l</li>
+      <li>ol-d</li>
+    </ol>
+    <div id="B">Hello World</div>
+  </body>
 </html>

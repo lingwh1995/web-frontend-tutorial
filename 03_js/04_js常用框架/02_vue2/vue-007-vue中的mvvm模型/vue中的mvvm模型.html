@@ -30,18 +30,18 @@
     <script type="text/javascript">
       /**
        * Vue 中的 MVVM 模型深度解析
-       * 
+       *
        * 1. M (Model) 模型：
        *    - 对应 data 中的数据。本质上是纯粹的 JavaScript 对象，负责存储业务数据。
-       * 
+       *
        * 2. V (View) 视图：
        *    - 对应模板代码（HTML）。负责将数据转化为视觉界面呈现给用户。
-       * 
+       *
        * 3. VM (ViewModel) 视图模型：
        *    - 对应 Vue 实例对象（new Vue）。它是 MVVM 的核心纽带。
        *    - 功能一：Data Bindings（数据绑定），将 Model 的改变自动更新到 View。
        *    - 功能二：DOM Listeners（DOM 监听），将 View 的变化（如输入）同步回 Model。
-       * 
+       *
        * 4. 关键结论：
        *    - data 中所有的属性，最后都出现在了 vm 身上。
        *    - vm 身上所有的属性及 Vue 原型上所有的属性，在 Vue 模板中都可以直接使用。
@@ -49,7 +49,7 @@
 
       // 验证vue是否被引入，直接打印Vue这个变量
       console.log(Vue)
-      
+
       // 设置为 false 以阻止 vue 在启动时生成生产提示。
       Vue.config.productionTip = false
 

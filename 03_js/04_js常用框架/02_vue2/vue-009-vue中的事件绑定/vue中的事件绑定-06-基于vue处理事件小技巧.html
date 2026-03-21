@@ -1,46 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>vue中的事件绑定-06-基于vue处理事件小技巧</title>
     <!-- 引入vue -->
     <script type="text/javascript" src="../vue.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div id="app">
-        <h1>基于vue处理事件小技巧：不使用小技巧</h1>
-        <h2><span>排序类别：{{sortType}}</span></h2>
-        <button @click="changeSortType('desc')">修改排序类别</button>
-        <h1>基于vue处理事件小技巧：使用小技巧</h1>
-        <h2><span>排序类别：{{sortType}}</span></h2>
-        <button @click="sortType = 'desc'">修改排序类别</button>
+      <h1>基于vue处理事件小技巧：不使用小技巧</h1>
+      <h2><span>排序类别：{{sortType}}</span></h2>
+      <button @click="changeSortType('desc')">修改排序类别</button>
+      <h1>基于vue处理事件小技巧：使用小技巧</h1>
+      <h2><span>排序类别：{{sortType}}</span></h2>
+      <button @click="sortType = 'desc'">修改排序类别</button>
     </div>
 
     <script type="text/javascript">
-        //设置为 false 以阻止 vue 在启动时生成生产提示。
-        Vue.config.productionTip = false
+      // 设置为 false 以阻止 vue 在启动时生成生产提示。
+      Vue.config.productionTip = false
 
-        /**
-         * 基于vue处理事件小技巧
-         *      1.当函数体中内容过于简单时，直接在 @click后面写上函数体内容，不用单独写一个函数，如：
-         *          <button @click="sortType = 'desc'">修改排序类别</button>
-         *      2.如果不传递参数，方法名后面的小括号可以不写，如:
-         *          <button @click="show">点击显示提示</button> 执行效果等同于
-         *          <button @click="show()">点击显示提示</button>
-         */
-        //创建vue实例
-        const vm = new Vue({
-            el: '#app',
-            data: {
-                sortType: 'default'
-            },
-            methods: {
-                 changeSortType(param) {
-                    this.sortType = param
-                },
-            }
-        })
+      /**
+       * 基于vue处理事件小技巧
+       *
+       * 1.当函数体中内容过于简单时，直接在 @click后面写上函数体内容，不用单独写一个函数，如：
+       *   <button @click="sortType = 'desc'">修改排序类别</button>
+       * 2.如果不传递参数，方法名后面的小括号可以不写，如:
+       *   <button @click="show">点击显示提示</button> 执行效果等同于
+       *   <button @click="show()">点击显示提示</button>
+       */
+      // 创建vue实例
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          sortType: 'default',
+        },
+        methods: {
+          changeSortType(param) {
+            this.sortType = param
+          },
+        },
+      })
     </script>
-</body>
+  </body>
 </html>

@@ -1,67 +1,70 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-	<!--错误的引入jquery的方法-->
-	<!--<script type="text/javascript" src="jquery/jquery-2.0.3.js"/>-->
-	<!--正确的的引入jquery的方法-->
-	<script src="./jquery-3.3.1.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			/**
-			 * 使用append(content)方法追加文字和DOM元素
-			 * append(content)用法：向指定的元素中追加内容，被追加的content参数，可以是字符、HTML元素标记，还可以是一个返回字符串内容的函数
-			 */
-			$("#append1").append("<p>追加的append1</>");
-			$("#append2").append("追加的append2");
-			//使用append追加时可以渲染
-			$("#append3").append("<span style='color:red;'>追加的append2</span>");
-			/**
-			 * 使用append方法追加DOM元素(为<ul/>追加<li/>子标签)
-			 */
-			 $("#append4").append("<li>first-li</li>");
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <!--错误的引入jquery的方法-->
+    <!--<script type="text/javascript" src="jquery/jquery-2.0.3.js"/>-->
+    <!--正确的的引入jquery的方法-->
+    <script src="./jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        /**
+         * 使用append(content)方法追加文字和DOM元素
+         * append(content)用法：向指定的元素中追加内容，被追加的content参数，可以是字符、HTML元素标记，还可以是一个返回字符串内容的函数
+         */
+        $('#append1').append('<p>追加的append1</>')
+        $('#append2').append('追加的append2')
+        //使用append追加时可以渲染
+        $('#append3').append("<span style='color:red;'>追加的append2</span>")
+        /**
+         * 使用append方法追加DOM元素(为<ul/>追加<li/>子标签)
+         */
+        $('#append4').append('<li>first-li</li>')
 
+        /**
+         * obj.appendTo():obj可以是通过jquery选中的页面元素,如:$("#beP2"),也可以是通过jquery方法创建的元素，如:$("<ol></ol>")
+         */
+        //$("#beP1").appendTo("#appdenTO1");
+        $('#beP2').appendTo('#appdenTO2')
 
-			/**
-			 * obj.appendTo():obj可以是通过jquery选中的页面元素,如:$("#beP2"),也可以是通过jquery方法创建的元素，如:$("<ol></ol>")
-			 */
-			 //$("#beP1").appendTo("#appdenTO1");
-			 $("#beP2").appendTo("#appdenTO2");
-
-			 /**
-			  * append/appendTo高级用法
-			  */
-			 $('<li>WWW</li>',{title:'appendSenior',html:'append/appendTo高级用法',css:{color:'red'}}).appendTo($('#appendTo3')); //输出:WWW
-			 $('<li></li>',{title:'appendSenior',html:'append/appendTo高级用法',css:{color:'red'}}).appendTo($('#appendTo3'));  //输出:append/appendTo高级用法
-		});
+        /**
+         * append/appendTo高级用法
+         */
+        $('<li>WWW</li>', { title: 'appendSenior', html: 'append/appendTo高级用法', css: { color: 'red' } }).appendTo(
+          $('#appendTo3')
+        ) //输出:WWW
+        $('<li></li>', { title: 'appendSenior', html: 'append/appendTo高级用法', css: { color: 'red' } }).appendTo(
+          $('#appendTo3')
+        ) //输出:append/appendTo高级用法
+      })
     </script>
+  </head>
+  <body>
+    <h3 id="append1">append1()</h3>
+    <h3 id="append2">append2()</h3>
+    <h3 id="append3">append3()</h3>
+    <ul id="append4"></ul>
+    <hr />
 
-</head>
-<body>
-	<h3 id="append1">append1()</h3>
-	<h3 id="append2">append2()</h3>
-	<h3 id="append3">append3()</h3>
-	<ul id="append4"></ul>
-	<hr/>
+    <div id="appdenTO1" style="border: 1px solid blue">
+      <h3>appendTO1()</h3>
+    </div>
+    <p id="beP1">被追加的内容(未执行appendTo()方法)</p>
 
-	<div id="appdenTO1" style="border: 1px solid blue">
-        <h3>appendTO1()</h3>
-	</div>
-	<p id="beP1">被追加的内容(未执行appendTo()方法)</p>
+    <hr />
 
-	<hr/>
+    <div id="appdenTO2" style="border: 1px solid blue">
+      <h3>appendTO2()</h3>
+    </div>
+    <p id="beP2">被追加的内容(执行了appendTo()方法)</p>
 
-	<div id="appdenTO2" style="border: 1px solid blue">
-        <h3>appendTO2()</h3>
-	</div>
-	<p id="beP2">被追加的内容(执行了appendTo()方法)</p>
-
-	<hr/>
-	<ul id="appendTo3"></ul>
-
-</body>
+    <hr />
+    <ul id="appendTo3"></ul>
+  </body>
 </html>

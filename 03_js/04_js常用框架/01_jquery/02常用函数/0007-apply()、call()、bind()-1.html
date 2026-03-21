@@ -1,64 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <script src="./jquery-3.3.1.js"></script>
-    <script >
-        /**
-         * 下面的this指向person
-         */
-        var name='全局变量',age = 17;
-        var person = {
-            name: '函数内部变量',
-            personAge: this.age,
-            toString: function(){
-                console.log(this);
-                console.log(this.name + ',年龄:' + this.age);
-            }
-        };
-        console.log('-----------------------------');
-        console.log(person.age);
-        person.toString();
-        console.log('-----------------------------');
+    <script>
+      /**
+       * 下面的this指向person
+       */
+      var name = '全局变量',
+        age = 17
+      var person = {
+        name: '函数内部变量',
+        personAge: this.age,
+        toString: function () {
+          console.log(this)
+          console.log(this.name + ',年龄:' + this.age)
+        },
+      }
+      console.log('-----------------------------')
+      console.log(person.age)
+      person.toString()
+      console.log('-----------------------------')
 
-        /**
-         * 下面的this指向Window
-         */
-        var hero = 'Master Yi';
-        function show(param1,param2){
-            console.log(this);
-            console.log(this.hero+',param1:'+param1+",param2:"+param2);
-        }
-        show();
-        console.log('-----------------------------');
+      /**
+       * 下面的this指向Window
+       */
+      var hero = 'Master Yi'
+      function show(param1, param2) {
+        console.log(this)
+        console.log(this.hero + ',param1:' + param1 + ',param2:' + param2)
+      }
+      show()
+      console.log('-----------------------------')
 
-        //上面的两个this的代表的值是不同,使用call()、apply()、bind()都可以重新定义this这个对象
-        /**
-         * 1.call()、apply()、bind()的相同点,第一个参数都是函数内部this指向的对象
-         */
-        var newHreo = {hero:'newHreo....'};
-        //show.call(callObj);
-        this.show.call(newHreo);
-        this.show.apply(newHreo);
-        this.show.bind(newHreo)();
-        console.log('-----------------------------');
-        /**
-         * 2.call()、apply()、bind()的区别:传参方式不同 
-         *   call(): 直接把参数按照顺序放入进去就行了
-         *   apply(): 把参数按顺序放入到数组中,然后把数组作为参数传递  
-         *   bind():同call(),只不过调用时最后面要加一个()
-         */
-        this.show.call(newHreo,'我是call()传递的第一个参数','我是call()传递的第二个参数');
-        this.show.apply(newHreo,['我是apply()传递的第一个参数','我是apply()传递的第二个参数']);
-        this.show.bind(newHreo,'我是bind()传递的第一个参数','我是bind()传递的第二个参数')();
-        //bind()错误调用方法
-        this.show.bind(newHreo,['我是bind()传递的第一个参数','我是bind()传递的第二个参数'])();
+      //上面的两个this的代表的值是不同,使用call()、apply()、bind()都可以重新定义this这个对象
+      /**
+       * 1.call()、apply()、bind()的相同点,第一个参数都是函数内部this指向的对象
+       */
+      var newHreo = { hero: 'newHreo....' }
+      //show.call(callObj);
+      this.show.call(newHreo)
+      this.show.apply(newHreo)
+      this.show.bind(newHreo)()
+      console.log('-----------------------------')
+      /**
+       * 2.call()、apply()、bind()的区别:传参方式不同
+       *   call(): 直接把参数按照顺序放入进去就行了
+       *   apply(): 把参数按顺序放入到数组中,然后把数组作为参数传递
+       *   bind():同call(),只不过调用时最后面要加一个()
+       */
+      this.show.call(newHreo, '我是call()传递的第一个参数', '我是call()传递的第二个参数')
+      this.show.apply(newHreo, ['我是apply()传递的第一个参数', '我是apply()传递的第二个参数'])
+      this.show.bind(newHreo, '我是bind()传递的第一个参数', '我是bind()传递的第二个参数')()
+      //bind()错误调用方法
+      this.show.bind(newHreo, ['我是bind()传递的第一个参数', '我是bind()传递的第二个参数'])()
     </script>
-</head>
-<body>
-
-</body>
+  </head>
+  <body></body>
 </html>

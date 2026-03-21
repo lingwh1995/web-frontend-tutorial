@@ -1,74 +1,75 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-	<script src="./jquery-3.3.1.js"></script>
-	<script>
-		//jQuery匿名函数自执行
-		(function(){
-			//alert("jQuery匿名函数自执行！");
-		})();
-		//严格模式
-		//"use strict";//要写在最上面才会生效
-		a = 10;
-		//alert(a);
-		
-		//alert(window.b == undefined);//true
-		//兼容性比上面代码更强,上面的代码在xml中会出bug，下面的代码全兼容
-		//alert(typeof window.b == 'undefined');//false
-	
-		//js面向对象
-		function Person(){
-			Person.prototype.eat = function(){
-				//alert("吃东西...js");
-			};
-			Person.prototype.drink = function(){
-				//alert("喝东西...js");
-			};
-		};
-		//创建一个对象
-		var person = new Person();
-		person.eat();
-		person.drink();
-		
-		//jQuery如何实现面向对象,好处:省略了初始化对象的过程
-		//xxx.prototype后，可以为xxx这个变量添加方法喝属性，使之成为一个对象
-		function jQuery(){
-			return jQuery.prototype;
-		}
-		jQuery.prototype.eat = function(){
-			alert("吃东西...jQuery");
-		}
-		jQuery.prototype.drink = function(){
-			alert("喝东西...jQuery");
-		}
-		jQuery.prototype.const = "我是常量！";
-		//jQuery().eat();
-		//jQuery().drink();
-		//alert(jQuery().const);
-		
-		//jQuery constructor属性
-		function Dog(){}
-		//Dog.prototype.name='张三';
-		//Dog.prototype.age='30';
-		Dog.prototype = {
-			//修正指向
-			//constructor:Dog,
-			name:'hello',
-			age:30
-		};
-		var dog = new Dog();
-		//不修正指向:function Object() { [native code] }，修正指向：function Dog(){}
-		//native code是计算机二进制，无法通过()来直接执行，只有通过抛出的接口来调用
-		alert(dog.constructor);
-		alert(dog.name);
-		alert(dog.age);
-	</script>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="./jquery-3.3.1.js"></script>
+    <script>
+      //jQuery匿名函数自执行
+      ;(function () {
+        //alert("jQuery匿名函数自执行！");
+      })()
+      //严格模式
+      //"use strict";//要写在最上面才会生效
+      a = 10
+      //alert(a);
+
+      //alert(window.b == undefined);//true
+      //兼容性比上面代码更强,上面的代码在xml中会出bug，下面的代码全兼容
+      //alert(typeof window.b == 'undefined');//false
+
+      //js面向对象
+      function Person() {
+        Person.prototype.eat = function () {
+          //alert("吃东西...js");
+        }
+        Person.prototype.drink = function () {
+          //alert("喝东西...js");
+        }
+      }
+      //创建一个对象
+      var person = new Person()
+      person.eat()
+      person.drink()
+
+      //jQuery如何实现面向对象,好处:省略了初始化对象的过程
+      //xxx.prototype后，可以为xxx这个变量添加方法喝属性，使之成为一个对象
+      function jQuery() {
+        return jQuery.prototype
+      }
+      jQuery.prototype.eat = function () {
+        alert('吃东西...jQuery')
+      }
+      jQuery.prototype.drink = function () {
+        alert('喝东西...jQuery')
+      }
+      jQuery.prototype.const = '我是常量！'
+      //jQuery().eat();
+      //jQuery().drink();
+      //alert(jQuery().const);
+
+      //jQuery constructor属性
+      function Dog() {}
+      //Dog.prototype.name='张三';
+      //Dog.prototype.age='30';
+      Dog.prototype = {
+        //修正指向
+        //constructor:Dog,
+        name: 'hello',
+        age: 30,
+      }
+      var dog = new Dog()
+      //不修正指向:function Object() { [native code] }，修正指向：function Dog(){}
+      //native code是计算机二进制，无法通过()来直接执行，只有通过抛出的接口来调用
+      alert(dog.constructor)
+      alert(dog.name)
+      alert(dog.age)
+    </script>
+  </head>
+  <body></body>
 </html>

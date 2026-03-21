@@ -1,35 +1,35 @@
 <html>
-      <head>
-	         <title>js°æ³é½±2.0</title>
-			 <meta http-equiv="Content-Type" content="text/html;charaset=utf-8"/>
-             <script type="text/javascript">
-			        var myInterval ;
-			        function choice(){
-						 var myvalue = document.getElementById("A").value;
-						 if(myvalue=="¿ªÊ¼"){
-                             document.getElementById("A").value = "Í£Ö¹" ;
-						     myInterval = setInterval("start()","100");
-						 }
-						 if(myvalue=="Í£Ö¹"){
-						     document.getElementById("A").value = "¿ªÊ¼" ;
-                             clearInterval(myInterval);
-						 }
-					    
-					}
-					var names = ["a","b","c","d","e","f"];
-					var i = 0 ;
-					function start(){
-						var spanTextTemp = document.getElementsByTagName("span");						
-							 if(i==names.length){
-							    i=0;
-							 }				
-							 spanTextTemp[0].innerHTML = names[i];	
-							 i++;			 
-					}
-			 </script>
-	  </head>
-	  <body>
-	        <font color="green">ÐÒÔË¹ÛÖÚ£º</font><span style="color:red;"></span>
-	        <input type="button" value="¿ªÊ¼" onclick="choice()" id="A"/>
-	  </body>
+  <head>
+    <title>jsï¿½ï¿½é½±2.0</title>
+    <meta http-equiv="Content-Type" content="text/html;charaset=utf-8" />
+    <script type="text/javascript">
+      var myInterval
+      function choice() {
+        var myvalue = document.getElementById('A').value
+        if (myvalue == 'ï¿½ï¿½Ê¼') {
+          document.getElementById('A').value = 'Í£Ö¹'
+          myInterval = setInterval('start()', '100')
+        }
+        if (myvalue == 'Í£Ö¹') {
+          document.getElementById('A').value = 'ï¿½ï¿½Ê¼'
+          clearInterval(myInterval)
+        }
+      }
+      var names = ['a', 'b', 'c', 'd', 'e', 'f']
+      var i = 0
+      function start() {
+        var spanTextTemp = document.getElementsByTagName('span')
+        if (i == names.length) {
+          i = 0
+        }
+        spanTextTemp[0].innerHTML = names[i]
+        i++
+      }
+    </script>
+  </head>
+  <body>
+    <font color="green">ï¿½ï¿½ï¿½Ë¹ï¿½ï¿½Ú£ï¿½</font>
+    <span style="color: red"></span>
+    <input type="button" value="ï¿½ï¿½Ê¼" onclick="choice()" id="A" />
+  </body>
 </html>
