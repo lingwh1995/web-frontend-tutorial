@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="./jquery-3.3.1.js"></script>
+    <script>
+      $(function () {
+        /**
+         * 1. 基础合并：修改源对象
+         * 将第二个对象的属性和方法合并到第一个对象中去
+         */
+        const extend1 = () => {
+          const person1 = { name: '张三' }
+          const person2 = {
+            age: 18,
+            sayHello() {
+              console.log('你好，我是' + this.name)
+            },
+          }
+
+          // 将第二个对象的属性和方法合并到第一个对象中去
+          $.extend(person1, person2)
+
+          console.group('--- 1. 基础合并 ---')
+          console.log('合并后的 person1:', person1)
+          // 调用合并后的属性
+          console.log(person1.age)
+          // 调用合并后的方法
+          person1.sayHello()
+          console.groupEnd()
+        }
+        extend1()
+
+        /**
+         * 2. 非破坏性合并：合并到新对象
+         * 这种方式最常用，不会污染原始的 person1 和 person2
+         */
+        const extend2 = () => {
+          const person1 = { name: '李四' }
+          const person2 = {
+            age: 25,
+            sayHello() {
+              console.log('你好，我是' + this.name)
+            },
+          }
+
+          // 现代原生 JS 做法: const target = { ...person1, ...person2 };
+          const target = $.extend({}, person1, person2)
+
+          console.group('--- 2. 非破坏性合并 ---')
+          console.log('新目标对象 target:', target)
+          console.log('原对象 person1 是否受影响:', person1.age === undefined)
+          // 调用合并后的属性
+          console.log(target.age)
+          // 调用合并后的方法
+          target.sayHello()
+          console.groupEnd()
+        }
+        extend2()
+
+        /**
+         * 3. 浅拷贝 vs 深拷贝 (核心区别)
+         * 浅拷贝：只合并第一层，子对象会被直接覆盖。
+         * 深拷贝：递归合并所有层级的对象。
+         */
+        const extend3 = () => {
+          const object1 = {
+            apple: 0,
+            banana: { weight: 52, price: 100 },
+            cherry: 97,
+          }
+          const object2 = {
+            banana: { price: 200 }, // 注意：这里没有 weight
+            durian: 100,
+          }
+
+          // --- 浅拷贝 (默认) ---
+          // 结果：banana 会被 object2 的直接覆盖，weight 会丢失
+          const shallowCopy = $.extend({}, object1, object2)
+
+          // --- 深拷贝 (第一个参数传 true) ---
+          // 结果：banana 内部的属性会合并，weight 会保留
+          const deepCopy = $.extend(true, {}, object1, object2)
+
+          console.group('--- 3. 浅拷贝 vs 深拷贝 ---')
+          console.log('浅拷贝结果 banana:', shallowCopy.banana) // { price: 200 }
+          console.log('深拷贝结果 banana:', deepCopy.banana) // { weight: 52, price: 200 }
+          console.groupEnd()
+        }
+        extend3()
+      })
+    </script>
+  </head>
+  <body></body>
+</html>
